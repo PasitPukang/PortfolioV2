@@ -3,13 +3,29 @@ import cert2 from '../assets/javascript_basic_certificate.pdf';
 import cert3 from '../assets/java_basic_certificate.pdf';
 
 export const data = {
-    name: "Pasit Pukang",
-    title: "Frontend Developer",
-    caption: "เป็นนักพัฒนาซอฟต์แวร์ที่มีความชื่นชอบในการสร้างประสบการณ์ผู้ใช้ที่น่าทึ่งและมีประสิทธิภาพ ด้วยความเชี่ยวชาญในเทคโนโลยี Frontend และความสามารถในการทำงานร่วมกับทีม ผมมุ่งมั่นที่จะสร้างเว็บไซต์และแอปพลิเคชันที่ไม่เพียงแต่สวยงาม แต่ยังใช้งานง่ายและตอบสนองความต้องการของผู้ใช้ได้อย่างเต็มที่",
+    name: "พสิษฐ์ ภูฆัง",
+    nickname: "เบสท์ (Best)",
+    englishName: "Pasit Pukang",
+    title: "Full Stack / Front End Developer (Internship)",
+    tagline: "Building Clean, Functional & Modern Web Apps",
+    subtitle: "นิสิตปี 4 สาขาเทคโนโลยีสารสนเทศ มก.กำแพงแสน",
+    caption: "สวัสดีครับผม เบสท์ นิสิตปี 4 IT มก.กำแพงแสน ครับ มีความสนใจในการพัฒนาเว็บแอปพลิเคชันทั้งส่วน Front End และ Full Stack ช่วงที่ผ่านมาได้ลุยทำโปรเจกต์จริงด้วย Next.js, React, Tailwind CSS, Prisma ORM และ Supabase กำลังมองหาโอกาสเข้าฝึกงานเพื่อลุยงานจริง ร่วมสร้างประโยชน์ให้ทีม และเปิดรับประสบการณ์ใหม่ๆ ครับ",
+    email: "pasit.pu@ku.th",
+    github: "https://github.com/PasitPukang",
+    location: "นครปฐม / กรุงเทพมหานคร",
+    quote: "Code with Purpose, Design with Empathy.",
+    stats: [
+        { label: "Featured Projects", value: "4+" },
+        { label: "Year Student", value: "Yr 4" },
+        { label: "Primary Stack", value: "Next/React" },
+    ],
     btnText: "View Certificate",
     certificates: [
-        { name: "CSS Certificate", file: cert1 },
-        { name: "JavaScript Basic Certificate", file: cert2 },
-        { name: "Java Basic Certificate", file: cert3 },
-  ]
+        { name: "CSS Certificate", issuer: "HackerRank Verified", file: cert1 },
+        { name: "JS Basic Certificate", issuer: "HackerRank Verified", file: cert2 },
+        { name: "Java Basic Certificate", issuer: "HackerRank Verified", file: cert3 },
+    ]
 }
+
+
+

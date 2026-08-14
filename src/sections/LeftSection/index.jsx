@@ -1,35 +1,26 @@
 import Header from "../Header";
 import Navbar from "../Navbar";
-import Contact from "../Contact";
 import { motion } from "framer-motion";
-
 
 const LeftSection = () => {
   return (
-    <div className="px-6 lg:px-0">
-      
-      <motion.div
-        initial={{ opacity: 0, x: -60 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex flex-col gap-4 sticky top-24"
-      >
-        <div className="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 shadow-xl ">
-  <Header />
-</div>
-       
-        {/* Navbar */}
-        <div className="text-gray-500 hover:text-gray-900
-bg-transparent ">
-          <Navbar />
-        </div>
-
-        
-
-      </motion.div>
-
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="flex flex-col gap-6"
+    >
+      <div className="bg-slate-900/60 backdrop-blur-xl p-6 sm:p-7 rounded-3xl border border-slate-800/80 shadow-2xl shadow-indigo-950/20 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none" />
+        <Header />
+      </div>
+     
+      {/* Navbar - Desktop */}
+      <div className="bg-slate-900/40 backdrop-blur-md p-2 rounded-2xl border border-slate-800/60 hidden lg:block">
+        <Navbar />
+      </div>
+    </motion.div>
   );
 };
 
-export default LeftSection;
+export default LeftSection;

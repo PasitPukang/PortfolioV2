@@ -1,24 +1,35 @@
 export const data = {
-    title: "About",
-    description: "ผมชื่อ พสิษฐ์ ภูฆัง นิสิตชั้นปีที่ 3 สาขาเทคโนโลยีสารสนเทศ คณะศิลปศาสตร์และวิทยาศาสตร์ มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน มีความสนใจด้านการพัฒนาเว็บไซต์ โดยเฉพาะ Frontend มุ่งเน้นการสร้างประสบการณ์ผู้ใช้ที่ดี ใช้งานง่าย และมีประสิทธิภาพ พร้อมพัฒนาทักษะอย่างต่อเนื่องเพื่อก้าวสู่การเป็นนักพัฒนาซอฟต์แวร์มืออาชีพ",
+    title: "About Me",
+    subtitle: "เส้นทางการเรียนรู้และความสนใจในการพัฒนาซอฟต์แวร์",
+    description: "สวัสดีครับ ผม เบสท์ (พสิษฐ์ ภูฆัง) นิสิตปี 4 สาขาเทคโนโลยีสารสนเทศ มก.กำแพงแสน ครับ ผมเป็นคนที่ชอบและสนุกกับการสร้างเว็บแอปพลิเคชัน ไม่ว่าจะเป็นการออกแบบ UI หน้าบ้านให้สวย ใช้งานง่าย หรือการจัดระเบียบโครงสร้างระบบหลังบ้านให้ทำงานได้ราบรื่น",
+
+    story: "จุดเริ่มต้นของผมเกิดจากความสนใจว่าระบบเว็บที่ดีเขาสร้างกันอย่างไร จากนั้นเลยเริ่มฝึกเขียนโค้ดและพัฒนาโปรเจกต์จริงด้วย Next.js 14, React 18, Tailwind CSS ร่วมกับ Prisma ORM และ Supabase สิ่งที่ผมชอบมากที่สุดคือการได้เห็นโค้ดที่ตัวเองเขียนกลายเป็นระบบที่คนอื่นใช้งานได้จริง และเปิดรับการเรียนรู้สิ่งใหม่ๆ เพื่อพัฒนาตัวเองอยู่เสมอครับ",
 
     education: {
+        degree: "ปริญญาตรี เทคโนโลยีสารสนเทศ (B.Sc. IT)",
         institution: "มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน",
-        year: "2022 – ปัจจุบัน",
+        year: "2022 – ปัจจุบัน (นิสิตชั้นปีที่ 4)",
+        faculty: "คณะศิลปศาสตร์และวิทยาศาสตร์"
     },
 
     skills: [
         {
-            label: "Frontend",
-            items: ["React.js", "JavaScript","HTML", "CSS"],
+            category: "Full Stack & Web Frameworks",
+            items: ["Next.js 14", "React 18", "JavaScript (ES6+)", "TypeScript", "Vite"]
         },
         {
-            label: "Styling",
-            items: ["Tailwind CSS", "daisyUI", "Framer Motion"],
+            category: "Database & Backend Tech",
+            items: ["Prisma ORM", "Supabase", "Node.js Integration", "RESTful API", "Firebase"]
         },
         {
-            label: "Tools",
-            items: ["Vite", "Git", "GitHub", "Figma"],
+            category: "UI Styling & Animation",
+            items: ["Tailwind CSS", "daisyUI Component", "Framer Motion", "Responsive Design"]
         },
-    ],
+        {
+            category: "Tools & Team Collaboration",
+            items: ["Git / GitHub Workflow", "GitHub Pages Deployment", "Figma UI/UX Spec", "VS Code Environment"]
+        }
+    ]
 };
+
+
