@@ -10,6 +10,7 @@ export const data = [
         title: "ระบบติดตามการดำเนินงานของนิสิต (Student Progress Tracking Web App)",
         category: "Frontend Web Application",
         materials: [
+            { type: faGlobe, link: "https://pasitpukang.github.io/PortfolioV2/project_fiveper/", label: "Live Demo" },
             { type: faGithub, link: "https://github.com/PasitPukang/project_fiveper.git", label: "Source Code" }
         ],
         descriptions: [
@@ -47,19 +48,5 @@ export const data = [
         ],
         skills: ["React 19", "Vite", "Tailwind CSS v4", "Framer Motion", "JavaScript (ES6+)", "Context API", "REST API", "LocalStorage Sync", "Git"],
         picture: picP2,
-    },
-    {
-        date: "2025",
-        title: "Nginx Reverse Proxy & Load Balancer Setup",
-        category: "DevOps & Infrastructure",
-        materials: [
-            { type: faGithub, link: "https://github.com/PasitPukang/docker-compose-nginx-reversproxy-loadbalancer", label: "Source Code" }
-        ],
-        descriptions: [
-            "โปรเจกต์ตั้งค่าโครงสร้างระบบเซิร์ฟเวอร์ด้วย Docker Compose และ Nginx ทำหน้าที่เป็น Reverse Proxy และ Load Balancer",
-            "ช่วยจัดการกระจายปริมาณ Traffic ช่วยเพิ่มความปลอดภัยในการเชื่อมต่อเครือข่าย และป้องกันเซิร์ฟเวอร์ล่มเมื่อมีผู้ใช้งานพร้อมกันจำนวนมาก"
-        ],
-        skills: ["Docker", "Docker Compose", "Nginx", "Reverse Proxy", "Load Balancing", "DevOps", "Linux"],
-        picture: picP3,
     }
 ];
