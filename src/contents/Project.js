@@ -8,16 +8,16 @@ export const data = [
     {
         date: "2026",
         title: "ระบบติดตามการดำเนินงานของนิสิต (Student Progress Tracking Web App)",
-        category: "Frontend Web Application",
+        category: "Fullstack Serverless & Cloud Database",
         materials: [
             { type: faGlobe, link: "https://pasitpukang.github.io/PortfolioV2/project_fiveper/", label: "Live Demo" },
             { type: faGithub, link: "https://github.com/PasitPukang/project_fiveper.git", label: "Source Code" }
         ],
         descriptions: [
-            "เว็บแอปพลิเคชันช่วยติดตามความคืบหน้าของงานและโปรเจกต์สำหรับนิสิต เน้นการออกแบบ UI หน้าบ้านให้สะอาดตา ใช้งานง่าย ไม่ซับซ้อน",
-            "พัฒนาด้วย React.js และ Tailwind CSS โดยแบ่งโครงสร้างโค้ดเป็นระบบ Reusable Components ช่วยให้แสดงผลและรองรับการใช้งานบนทุกอุปกรณ์ได้อย่างราบรื่น"
+            "เว็บแอปพลิเคชันระบบติดตามการดำเนินงานของนิสิตแบบครบวงจร รองรับ 3 บทบาทการทำงาน (ผู้ดูแลระบบ, อาจารย์, นิสิต) พร้อมแดชบอร์ดสรุปสถิติ, รายงานภาพรวมรายวิชา, ระบบให้ข้อเสนอแนะพร้อมการตอบกลับ และระบบจัดการโครงการ",
+            "สถาปัตยกรรมระบบแบบ Serverless เชื่อมต่อฐานข้อมูล Supabase Cloud PostgreSQL แบบ Real-time พร้อมความปลอดภัยระดับ Row Level Security (RLS) และระบบสำรองข้อมูลออฟไลน์ (LocalStorage Offline Fallback) รองรับการใช้งาน 24/7 ทุกอุปกรณ์"
         ],
-        skills: ["React.js", "Vite", "Tailwind CSS", "daisyUI", "Component-Based Architecture", "Responsive Design", "Git"],
+        skills: ["React.js", "TypeScript", "Vite", "Supabase Cloud", "PostgreSQL", "RLS Security", "Tailwind CSS", "Recharts", "REST API", "Git"],
         picture: picP1,
     },
     {
