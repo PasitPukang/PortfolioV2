@@ -79,7 +79,7 @@ const Project = () => {
                                         {title}
                                     </h3>
 
-                                    {/* Links / GitHub */}
+                                    {/* Links / GitHub / Live Demo */}
                                     <div className="flex items-center gap-2 shrink-0">
                                         {materials.map((e, i) => (
                                             <a
@@ -88,10 +88,10 @@ const Project = () => {
                                                 target="_blank"
                                                 rel="noreferrer"
                                                 className="px-3 py-1.5 rounded-xl bg-indigo-500/10 hover:bg-indigo-600/30 border border-indigo-500/20 hover:border-indigo-500/40 flex items-center gap-1.5 text-indigo-300 text-xs font-semibold transition-all duration-300 shadow-sm hover:scale-105"
-                                                title="View Repository"
+                                                title={e.label || "View Link"}
                                             >
                                                 <FontAwesomeIcon icon={e.type || faGithub} />
-                                                <span>Source Code</span>
+                                                <span>{e.label || "Source Code"}</span>
                                                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-[10px] ml-0.5 opacity-70" />
                                             </a>
                                         ))}

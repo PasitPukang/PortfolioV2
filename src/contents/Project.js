@@ -1,7 +1,8 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import picP1 from '../assets/01.png'
-import picP2 from '../assets/02.png'
-import picP3 from '../assets/03.png'
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import picP1 from '../assets/01.png';
+import picP2 from '../assets/02.png';
+import picP3 from '../assets/03.png';
 
 export const data = [
     {
@@ -9,7 +10,7 @@ export const data = [
         title: "ระบบติดตามการดำเนินงานของนิสิต (Student Progress Tracking Web App)",
         category: "Frontend Web Application",
         materials: [
-            { type: faGithub, link: "https://github.com/PasitPukang/project_fiveper.git" }
+            { type: faGithub, link: "https://github.com/PasitPukang/project_fiveper.git", label: "Source Code" }
         ],
         descriptions: [
             "เว็บแอปพลิเคชันช่วยติดตามความคืบหน้าของงานและโปรเจกต์สำหรับนิสิต เน้นการออกแบบ UI หน้าบ้านให้สะอาดตา ใช้งานง่าย ไม่ซับซ้อน",
@@ -23,7 +24,7 @@ export const data = [
         title: "ระบบควบคุมและจัดการอุปกรณ์ IoT (IoT Control Web Application)",
         category: "Frontend & Real-time Integration",
         materials: [
-            { type: faGithub, link: "https://github.com/PasitPukang/Appcontrol-Final_Project.git" }
+            { type: faGithub, link: "https://github.com/PasitPukang/Appcontrol-Final_Project.git", label: "Source Code" }
         ],
         descriptions: [
             "เว็บสำหรับสั่งการและตรวจสอบสถานะของอุปกรณ์ IoT ผ่านหน้าจอแบบ Real-time",
@@ -37,7 +38,8 @@ export const data = [
         title: "ระบบจองห้องประชุมออนไลน์อัจฉริยะ (MeetingRoom PRO v2.0)",
         category: "Fullstack & Interactive Web App",
         materials: [
-            { type: faGithub, link: "https://github.com/PasitPukang/Project.git" }
+            { type: faGlobe, link: "https://pasitpukang.github.io/PortfolioV2/Project/", label: "Live Demo" },
+            { type: faGithub, link: "https://github.com/PasitPukang/Project.git", label: "Source Code" }
         ],
         descriptions: [
             "เว็บแอปพลิเคชันจองห้องประชุมออนไลน์เวอร์ชันปรับปรุงใหม่ ดีไซน์มินิมอล ใช้งานง่าย รองรับการใช้งานสมบูรณ์แบบบนสมาร์ตโฟนและคอมพิวเตอร์",
@@ -51,7 +53,7 @@ export const data = [
         title: "Nginx Reverse Proxy & Load Balancer Setup",
         category: "DevOps & Infrastructure",
         materials: [
-            { type: faGithub, link: "https://github.com/PasitPukang/docker-compose-nginx-reversproxy-loadbalancer" }
+            { type: faGithub, link: "https://github.com/PasitPukang/docker-compose-nginx-reversproxy-loadbalancer", label: "Source Code" }
         ],
         descriptions: [
             "โปรเจกต์ตั้งค่าโครงสร้างระบบเซิร์ฟเวอร์ด้วย Docker Compose และ Nginx ทำหน้าที่เป็น Reverse Proxy และ Load Balancer",
@@ -61,6 +63,3 @@ export const data = [
         picture: picP3,
     }
 ];
-
-
-
