@@ -8,7 +8,7 @@ export const data = [
     {
         date: "2026",
         title: "ระบบติดตามการดำเนินงานของนิสิต (Student Progress Tracking Web App)",
-        category: "Fullstack Serverless & Cloud Database",
+        category: "Fullstack & Cloud Database",
         materials: [
             { type: faGlobe, link: "https://pasitpukang.github.io/PortfolioV2/project_fiveper/", label: "Live Demo" },
             { type: faGithub, link: "https://github.com/PasitPukang/project_fiveper.git", label: "Source Code" }

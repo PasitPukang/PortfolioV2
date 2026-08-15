@@ -1,56 +1,63 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import LeftSection from './sections/LeftSection'
-import RightSection from './sections/RightSection'
+import React, { useState, useEffect } from 'react';
+import './App.css';
+import EditorialNavbar from './components/EditorialNavbar';
+import EditorialHero from './sections/EditorialHero';
+import MarqueeTicker from './components/MarqueeTicker';
+import EditorialWorks from './sections/EditorialWorks';
+import StagesSection from './sections/StagesSection';
+import EditorialAbout from './sections/EditorialAbout';
+import EditorialContact from './sections/EditorialContact';
 
 function App() {
-  const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 })
+  const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      setMousePos({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 antialiased selection:bg-indigo-500/30 selection:text-indigo-200 relative overflow-x-hidden">
-
-      {/* Dynamic Mouse Spotlight Glow */}
+    <div className="min-h-screen bg-[#E7E5E0] text-[#1C1D20] p-3 sm:p-6 lg:p-10 font-sans selection:bg-[#1C1D20] selection:text-[#ECEAE5] relative">
+      
+      {/* Subtle Ambient Spotlight on Outer Canvas */}
       <div 
-        className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300 hidden md:block"
+        className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300 hidden md:block"
         style={{
-          background: `radial-gradient(650px circle at ${mousePos.x}px ${mousePos.y}px, rgba(99, 102, 241, 0.12), transparent 80%)`
+          background: `radial-gradient(550px circle at ${mousePos.x}px ${mousePos.y}px, rgba(28, 29, 32, 0.04), transparent 80%)`
         }}
       />
 
-      {/* Secondary Ambient Accent Orbs */}
-      <div className="fixed top-10 left-1/4 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse" />
-      <div className="fixed bottom-10 right-1/4 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '6s' }} />
+      {/* Main Framed Editorial Canvas (Serhii Korzhov / UPROCK Style) */}
+      <div className="w-full max-w-[1400px] mx-auto bg-[#ECEAE5] border-[2.5px] border-[#1C1D20] rounded-[24px] sm:rounded-[36px] shadow-2xl overflow-hidden relative z-10">
+        
+        {/* Top Navbar */}
+        <EditorialNavbar />
 
-      {/* Responsive Main Container: Full Width on PC (max-w-[1536px]), Padding for Mobile */}
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-6 sm:py-10 lg:py-14 relative z-10">
+        {/* 1. Hero Section with Massive Typography & Photo */}
+        <EditorialHero />
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 xl:gap-12 items-start relative">
+        {/* 2. Infinite Marquee Divider Ribbon */}
+        <MarqueeTicker text="MY WORKS" separator="✕" />
 
-          {/* Left Panel - Sticky Sidebar on PC, Stacked Top Card on Mobile */}
-          <header className="w-full lg:w-[380px] xl:w-[420px] 2xl:w-[450px] lg:shrink-0 lg:sticky lg:top-12 lg:max-h-[calc(100vh-60px)] lg:overflow-y-auto custom-scrollbar pr-0 lg:pr-1">
-            <LeftSection />
-          </header>
+        {/* 3. Featured Works 2-Column Grid */}
+        <EditorialWorks />
 
-          {/* Right Panel - Main Content Scroll Area */}
-          <main id="right-panel" className="flex-1 w-full min-w-0 space-y-8 sm:space-y-10">
-            <RightSection />
-          </main>
+        {/* 4. Stages of Website Development (Interactive Accordion) */}
+        <StagesSection />
 
-        </div>
+        {/* 5. About & Technical Competencies */}
+        <EditorialAbout />
+
+        {/* 6. Contact Me Footer */}
+        <EditorialContact />
 
       </div>
+
     </div>
-  )
+  );
 }
 
-
-export default App
-
+export default App;
