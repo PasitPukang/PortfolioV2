@@ -33,9 +33,6 @@ export default function EditorialNavbar() {
         <button onClick={() => scrollTo('works-section')} className="hover:text-emerald-700 transition cursor-pointer">
           Work
         </button>
-        <button onClick={() => scrollTo('stages-section')} className="hover:text-emerald-700 transition cursor-pointer">
-          Process
-        </button>
         <button onClick={() => scrollTo('music-section')} className="hover:text-emerald-700 transition cursor-pointer">
           Music & Talent
         </button>
@@ -65,12 +62,6 @@ export default function EditorialNavbar() {
             className="text-left font-display text-xl uppercase tracking-wider text-[#1C1D20] py-1.5 border-b border-[#1C1D20]/10"
           >
             Work (ผลงาน)
-          </button>
-          <button 
-            onClick={() => scrollTo('stages-section')}
-            className="text-left font-display text-xl uppercase tracking-wider text-[#1C1D20] py-1.5 border-b border-[#1C1D20]/10"
-          >
-            Process (ขั้นตอนทำงาน)
           </button>
           <button 
             onClick={() => scrollTo('music-section')}
