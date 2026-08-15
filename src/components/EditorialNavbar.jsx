@@ -7,6 +7,7 @@ import {
   faFilePdf,
   faDownload,
   faAward,
+  faExternalLinkAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 export default function EditorialNavbar() {
@@ -25,17 +26,6 @@ export default function EditorialNavbar() {
       el.scrollIntoView({ behavior: 'smooth' });
       setMobileMenuOpen(false);
     }
-  };
-
-  const handleDirectDownload = (fileUrl, fileName) => {
-    const link = document.createElement('a');
-    link.href = fileUrl;
-    link.download = fileName || 'Pasit_Pukang_Resume.pdf';
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   };
 
   return (
@@ -60,10 +50,7 @@ export default function EditorialNavbar() {
           download="Pasit_Pukang_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          onClick={(e) => {
-            handleDirectDownload(resumeUrl, 'Pasit_Pukang_Resume.pdf');
-          }}
-          className="group inline-flex items-center gap-2 text-xs font-bold text-[#1C1D20] hover:text-[#10B981] transition uppercase tracking-wider py-1.5 px-3.5 rounded-full border border-[#1C1D20]/30 hover:border-[#10B981] hover:bg-[#1C1D20] hover:text-white shadow-sm cursor-pointer"
+          className="group inline-flex items-center gap-2 text-xs font-bold text-[#1C1D20] hover:text-[#10B981] transition uppercase tracking-wider py-1.5 px-4 rounded-full border border-[#1C1D20]/30 hover:border-[#10B981] hover:bg-[#1C1D20] hover:text-white shadow-sm cursor-pointer"
         >
           <FontAwesomeIcon icon={faDownload} className="text-[11px] group-hover:translate-y-0.5 transition-transform" />
           <span>Download CV / Resume</span>
@@ -199,21 +186,32 @@ export default function EditorialNavbar() {
                       Official Resume (PDF)
                     </h4>
                     <p className="text-[11px] text-[#1C1D20]/60 font-mono">
-                      Pasit Pukang — Fullstack Dev
+                      Pasit Pukang — Fullstack Dev (15 MB)
                     </p>
                   </div>
                 </div>
 
-                <a
-                  href={resumeUrl}
-                  download="Pasit_Pukang_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl bg-[#1C1D20] hover:bg-emerald-600 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-md"
-                >
-                  <FontAwesomeIcon icon={faDownload} className="text-[10px]" />
-                  <span>Download</span>
-                </a>
+                <div className="flex items-center gap-1.5">
+                  <a
+                    href={resumeUrl}
+                    download="Pasit_Pukang_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-2 rounded-xl bg-[#1C1D20] hover:bg-emerald-600 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-md"
+                  >
+                    <FontAwesomeIcon icon={faDownload} className="text-[10px]" />
+                    <span>Download</span>
+                  </a>
+                  <a
+                    href={resumeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-xl border border-[#1C1D20]/30 hover:border-[#1C1D20] text-[#1C1D20] text-xs transition-all"
+                    title="Open in new tab"
+                  >
+                    <FontAwesomeIcon icon={faExternalLinkAlt} />
+                  </a>
+                </div>
               </div>
 
               {/* Certificates List */}
@@ -238,8 +236,9 @@ export default function EditorialNavbar() {
                       <FontAwesomeIcon icon={faAward} className="text-amber-500" />
                       <span>{cert.name}</span>
                     </div>
-                    <span className="text-[10px] font-mono text-emerald-700 font-bold group-hover:underline">
-                      View PDF ↗
+                    <span className="text-[10px] font-mono text-emerald-700 font-bold group-hover:underline flex items-center gap-1">
+                      <span>View PDF</span>
+                      <FontAwesomeIcon icon={faExternalLinkAlt} className="text-[9px]" />
                     </span>
                   </a>
                 ))}
