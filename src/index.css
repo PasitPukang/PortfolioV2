@@ -106,39 +106,148 @@ body {
   background: #1C1D20;
 }
 
-/* Print to PDF Optimization */
+/* =========================================================
+   PERFECT PRINT TO PDF STYLESHEET
+   Ensures 100% pixel-perfect, natural PDF export
+   ========================================================= */
 @media print {
-  * {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 8mm;
+  }
+
+  /* Reset all Framer Motion hidden states, opacities and animations */
+  *, *::before, *::after {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
   }
 
-  body {
+  html, body {
     background-color: #ECEAE5 !important;
     color: #1C1D20 !important;
-    padding: 0 !important;
+    font-size: 11pt !important;
     margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
   }
 
-  /* Hide interactive overlay elements during printing */
+  /* Canvas frame adjustments for multi-page print */
+  .main-framed-canvas {
+    border: 1.5px solid #1C1D20 !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background-color: #ECEAE5 !important;
+  }
+
+  /* Hide non-printable UI elements */
   .no-print,
   [data-cursor],
+  .modal,
   .fixed,
   button:not(.print-keep) {
     display: none !important;
   }
 
-  .overflow-hidden {
-    overflow: visible !important;
+  /* Sections cleanly separated without orphan page cuts */
+  section, footer, header {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+    border-top: 1.5px solid #1C1D20 !important;
   }
 
-  section {
-    break-inside: avoid;
-    page-break-inside: avoid;
+  /* Hero Section 2-Column layout in print */
+  .print-hero-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 24px !important;
   }
 
-  @page {
-    size: A4;
-    margin: 10mm;
+  .print-hero-photo {
+    width: 32% !important;
+    max-width: 200px !important;
+    aspect-ratio: 4/5 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .print-hero-bio {
+    width: 68% !important;
+    flex: 1 !important;
+  }
+
+  /* Works 2-Column layout in print */
+  .print-works-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+
+  .print-work-card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    padding: 14px !important;
+    border: 1.5px solid #1C1D20 !important;
+    background: #FFFFFF !important;
+    border-radius: 12px !important;
+  }
+
+  .print-work-img {
+    height: 140px !important;
+    max-height: 140px !important;
+    object-fit: cover !important;
+  }
+
+  /* Accordion Stages - Fully Expand in Print Mode */
+  .print-stage-content {
+    display: block !important;
+    height: auto !important;
+    opacity: 1 !important;
+    padding-bottom: 10px !important;
+  }
+
+  /* Music Bento Grid in Print */
+  .print-music-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .print-music-card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    height: 120px !important;
+  }
+
+  .print-music-img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* Keep stroked wireframe text legible in print */
+  .stroke-text, .stroke-text-thick {
+    -webkit-text-stroke: 1.5px #1C1D20 !important;
+    color: transparent !important;
+  }
+
+  /* Image preservation */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 }

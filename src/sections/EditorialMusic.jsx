@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMicrophoneLines,
-  faMusic,
   faUsers,
   faBolt,
   faTimes,
@@ -41,7 +40,7 @@ export default function EditorialMusic() {
       </motion.div>
 
       {/* Bento Grid Photo Gallery */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+      <div className="print-music-grid grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
         {musicData.gallery.map((item, idx) => (
           <motion.div
             key={item.id || idx}
@@ -51,12 +50,12 @@ export default function EditorialMusic() {
             transition={{ duration: 0.6, delay: idx * 0.08 }}
             data-cursor="view"
             onClick={() => setSelectedPhoto(item)}
-            className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl border-[2px] border-[#1C1D20] bg-slate-950 cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 ${item.span}`}
+            className={`print-music-card group relative overflow-hidden rounded-2xl sm:rounded-3xl border-[2px] border-[#1C1D20] bg-slate-950 cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 ${item.span}`}
           >
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-full object-cover group-hover:scale-108 transition-all duration-700 ease-out"
+              className="print-music-img w-full h-full object-cover group-hover:scale-108 transition-all duration-700 ease-out"
             />
             
             {/* Dark Overlay with Info */}
@@ -116,7 +115,7 @@ export default function EditorialMusic() {
       {/* Lightbox Photo Modal */}
       <AnimatePresence>
         {selectedPhoto && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1C1D20]/85 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1C1D20]/85 backdrop-blur-sm no-print">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}

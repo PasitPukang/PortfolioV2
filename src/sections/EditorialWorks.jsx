@@ -38,8 +38,8 @@ export default function EditorialWorks() {
         </p>
       </motion.div>
 
-      {/* 2-Column Editorial Grid (Matching video reference) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
+      {/* 2-Column Editorial Grid */}
+      <div className="print-works-grid grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
         {projectsData.map((project, idx) => (
           <motion.div
             key={idx}
@@ -47,10 +47,10 @@ export default function EditorialWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.7, delay: idx * 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col justify-between border-[2px] border-[#1C1D20] rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-[#F4F3EF] hover:bg-white transition-all duration-500 shadow-lg hover:shadow-2xl group"
+            className="print-work-card flex flex-col justify-between border-[2px] border-[#1C1D20] rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-[#F4F3EF] hover:bg-white transition-all duration-500 shadow-lg hover:shadow-2xl group"
           >
             {/* Card Top: Title, Subtitle, and Pill Tags */}
-            <div className="flex flex-col gap-4 mb-6">
+            <div className="flex flex-col gap-4 mb-4">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <h3 
@@ -76,23 +76,23 @@ export default function EditorialWorks() {
               </div>
 
               {/* Brief Description */}
-              <p className="text-xs sm:text-sm text-[#1C1D20]/80 line-clamp-2 leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#1C1D20]/80 leading-relaxed font-normal">
                 {project.descriptions[0]}
               </p>
             </div>
 
-            {/* Card Middle: Image Thumbnail with Custom Cursor "VIEW" */}
+            {/* Card Middle: Image Thumbnail */}
             <div
               data-cursor="view"
               onClick={() => setActiveModal(project)}
-              className="relative aspect-video rounded-xl overflow-hidden border-[1.5px] border-[#1C1D20] bg-slate-900 cursor-pointer mb-6 group/img shadow-inner"
+              className="relative aspect-video rounded-xl overflow-hidden border-[1.5px] border-[#1C1D20] bg-slate-900 cursor-pointer mb-4 group/img shadow-inner"
             >
               <img
                 src={project.picture}
                 alt={project.title}
-                className="w-full h-full object-cover group-hover/img:scale-108 transition-all duration-700 ease-out"
+                className="print-work-img w-full h-full object-cover group-hover/img:scale-108 transition-all duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-[#1C1D20]/20 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+              <div className="absolute inset-0 bg-[#1C1D20]/20 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none no-print">
                 <span className="px-4 py-2 rounded-full bg-[#1C1D20] text-white text-xs font-bold font-mono tracking-wider flex items-center gap-1.5 shadow-xl md:hidden">
                   <FontAwesomeIcon icon={faEye} className="text-xs" />
                   <span>VIEW DETAILS</span>
@@ -101,7 +101,7 @@ export default function EditorialWorks() {
             </div>
 
             {/* Card Bottom: Tech Stack Chips & Action Buttons */}
-            <div className="flex flex-col gap-4 pt-4 border-t border-[#1C1D20]/15">
+            <div className="flex flex-col gap-3 pt-3 border-t border-[#1C1D20]/15">
               {/* Tech Stack Chips */}
               <div className="flex flex-wrap gap-1.5">
                 {project.skills.slice(0, 6).map((skill, sIdx) => (
@@ -127,14 +127,14 @@ export default function EditorialWorks() {
                     >
                       <FontAwesomeIcon icon={mat.type || faGlobe} className="text-xs" />
                       <span>{mat.label}</span>
-                      <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-[9px] opacity-70" />
+                      <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-[9px] opacity-70 no-print" />
                     </a>
                   ))}
                 </div>
 
                 <button
                   onClick={() => setActiveModal(project)}
-                  className="text-xs font-mono font-bold text-[#1C1D20] hover:text-emerald-700 underline underline-offset-4 cursor-pointer"
+                  className="text-xs font-mono font-bold text-[#1C1D20] hover:text-emerald-700 underline underline-offset-4 cursor-pointer no-print"
                 >
                   Architecture & Specs →
                 </button>
@@ -148,7 +148,7 @@ export default function EditorialWorks() {
       {/* Project Detail Modal */}
       <AnimatePresence>
         {activeModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1C1D20]/80 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1C1D20]/80 backdrop-blur-sm no-print">
             <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}

@@ -53,14 +53,14 @@ export default function EditorialHero() {
       </div>
 
       {/* Split Grid: Photo + Intro Bio Statement */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-2">
+      <div className="print-hero-grid grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-2">
         
         {/* Left Column: Full Color Photo Card with Rotating Stamp */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.85, ease: 'easeOut', delay: 0.4 }}
-          className="lg:col-span-5 relative flex justify-center lg:justify-start"
+          className="print-hero-photo lg:col-span-5 relative flex justify-center lg:justify-start"
         >
           <div className="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden border-[2px] border-[#1C1D20] shadow-xl bg-slate-900 group">
             <motion.img
@@ -73,14 +73,14 @@ export default function EditorialHero() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
             
-            <div className="absolute bottom-4 left-4 right-4 text-white font-mono text-[11px] flex items-center justify-between">
+            <div className="absolute bottom-4 left-4 right-4 text-white font-mono text-[11px] flex items-center justify-between no-print">
               <span>PASIT PUKANG (BEST)</span>
               <span className="text-emerald-400">● AVAILABLE 2026</span>
             </div>
           </div>
 
           {/* Floating Rotating Stamp overlapping photo corner */}
-          <div className="absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 z-20">
+          <div className="absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 z-20 no-print">
             <RotatingStamp 
               text="• OPEN FOR INTERNSHIP 2026 • READY TO WORK •" 
               size={120} 
@@ -94,11 +94,11 @@ export default function EditorialHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: 'easeOut', delay: 0.5 }}
-          className="lg:col-span-7 flex flex-col justify-between gap-6 lg:pl-4"
+          className="print-hero-bio lg:col-span-7 flex flex-col justify-between gap-6 lg:pl-4"
         >
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1C1D20]/30 text-xs font-mono font-semibold uppercase tracking-widest text-[#1C1D20]">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse no-print" />
               IT Senior Student @ KU Kamphaeng Saen
             </div>
 
@@ -112,7 +112,7 @@ export default function EditorialHero() {
           </div>
 
           {/* Action Row */}
-          <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-[#1C1D20]/15">
+          <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-[#1C1D20]/15 no-print">
             <button
               onClick={() => scrollTo('works-section')}
               className="px-6 py-3 rounded-full bg-[#1C1D20] hover:bg-[#10B981] text-[#ECEAE5] hover:text-[#1C1D20] font-semibold text-xs uppercase tracking-wider transition-all duration-300 flex items-center gap-2 shadow-lg cursor-pointer hover:scale-105 active:scale-95"

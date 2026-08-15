@@ -44,7 +44,7 @@ const STAGES = [
 ];
 
 export default function StagesSection() {
-  const [openIndex, setOpenIndex] = useState(0); // Stage 1 open by default as in video
+  const [openIndex, setOpenIndex] = useState(0); // Stage 1 open by default
 
   const toggleStage = (index) => {
     setOpenIndex(openIndex === index ? -1 : index);
@@ -71,7 +71,7 @@ export default function StagesSection() {
         </div>
 
         {/* Floating Rotating Stamp (Matching video frame 00:08) */}
-        <div className="hidden sm:block">
+        <div className="hidden sm:block no-print">
           <RotatingStamp
             text="• WORK PROCESS • PRODUCTION READY • QUALITY FIRST •"
             size={110}
@@ -107,8 +107,8 @@ export default function StagesSection() {
                   </span>
                 </div>
 
-                {/* Plus / Minus Icon with Smooth Rotation */}
-                <div className={`w-8 h-8 rounded-full border border-[#1C1D20]/30 flex items-center justify-center text-[#1C1D20] group-hover:border-[#1C1D20] group-hover:bg-[#1C1D20] group-hover:text-white transition-all duration-300 shrink-0 ${isOpen ? 'bg-[#1C1D20] text-white rotate-180' : ''}`}>
+                {/* Plus / Minus Icon */}
+                <div className={`w-8 h-8 rounded-full border border-[#1C1D20]/30 flex items-center justify-center text-[#1C1D20] group-hover:border-[#1C1D20] group-hover:bg-[#1C1D20] group-hover:text-white transition-all duration-300 shrink-0 no-print ${isOpen ? 'bg-[#1C1D20] text-white rotate-180' : ''}`}>
                   <FontAwesomeIcon
                     icon={isOpen ? faMinus : faPlus}
                     className="text-xs transition-transform duration-300"
@@ -116,24 +116,14 @@ export default function StagesSection() {
                 </div>
               </button>
 
-              {/* Accordion Expandable Content */}
-              <AnimatePresence initial={false}>
-                {isOpen && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                    className="overflow-hidden"
-                  >
-                    <div className="pb-6 sm:pb-8 sm:pl-28 md:pl-36 max-w-3xl">
-                      <p className="text-xs sm:text-sm md:text-base text-[#1C1D20]/80 leading-relaxed font-normal bg-white/70 p-5 rounded-2xl border border-[#1C1D20]/15 shadow-sm">
-                        {stage.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {/* Accordion Expandable Content (Open in Print Mode automatically) */}
+              <div className={isOpen ? 'block' : 'hidden print:block'}>
+                <div className="pb-6 sm:pb-8 sm:pl-28 md:pl-36 max-w-3xl print-stage-content">
+                  <p className="text-xs sm:text-sm md:text-base text-[#1C1D20]/80 leading-relaxed font-normal bg-white/70 p-5 rounded-2xl border border-[#1C1D20]/15 shadow-sm">
+                    {stage.description}
+                  </p>
+                </div>
+              </div>
             </motion.div>
           );
         })}
