@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEnvelope,
   faMapMarkerAlt,
-  faPhone,
   faCheckCircle,
   faCopy,
   faArrowUp,
@@ -37,14 +37,37 @@ export default function EditorialContact() {
       {/* Massive Typographic Contact Header (Matching video frame 00:09 - 00:10) */}
       <div className="mb-12 sm:mb-16">
         <div className="flex flex-col leading-[0.85] tracking-tight">
-          <span className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[140px] font-display font-black text-[#1C1D20] uppercase">
-            CONTACT
-          </span>
-          <div className="flex items-center gap-4 sm:gap-8">
-            <span className="stroke-text-thick text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[140px] font-display font-black uppercase tracking-wider">
-              ME
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <span className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[140px] font-display font-black text-[#1C1D20] uppercase">
+              CONTACT
             </span>
-            <div className="h-[2px] sm:h-[3px] flex-1 bg-[#1C1D20]/40 mt-4 sm:mt-8" />
+          </motion.div>
+
+          <div className="flex items-center gap-4 sm:gap-8 overflow-hidden">
+            <motion.span 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="stroke-text-thick text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[140px] font-display font-black uppercase tracking-wider"
+            >
+              ME
+            </motion.span>
+            
+            {/* Animated Horizontal Line */}
+            <motion.div 
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.3, ease: 'easeOut' }}
+              style={{ transformOrigin: 'left' }}
+              className="h-[2px] sm:h-[3px] flex-1 bg-[#1C1D20]/40 mt-4 sm:mt-8" 
+            />
           </div>
         </div>
       </div>
@@ -65,13 +88,13 @@ export default function EditorialContact() {
                 href={soc.link}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center justify-between text-sm sm:text-base font-semibold text-[#1C1D20] hover:text-emerald-700 transition-colors py-1.5 border-b border-[#1C1D20]/10"
+                className="group flex items-center justify-between text-sm sm:text-base font-semibold text-[#1C1D20] hover:text-emerald-700 transition-all py-1.5 border-b border-[#1C1D20]/10 hover:border-[#1C1D20]"
               >
                 <div className="flex items-center gap-2.5">
-                  <FontAwesomeIcon icon={soc.icon} className="text-sm opacity-60 group-hover:opacity-100 transition" />
+                  <FontAwesomeIcon icon={soc.icon} className="text-sm opacity-60 group-hover:opacity-100 transition group-hover:scale-110" />
                   <span>{soc.label}</span>
                 </div>
-                <span className="text-xs font-mono opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
+                <span className="text-xs font-mono opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-all duration-300">
                   ↗
                 </span>
               </a>
@@ -94,7 +117,7 @@ export default function EditorialContact() {
               </div>
               <button
                 onClick={copyEmail}
-                className="px-3.5 py-1.5 rounded-xl bg-[#1C1D20] hover:bg-emerald-600 text-white text-xs font-mono font-semibold transition-all flex items-center gap-1.5 self-start sm:self-auto cursor-pointer"
+                className="px-3.5 py-1.5 rounded-xl bg-[#1C1D20] hover:bg-emerald-600 text-white text-xs font-mono font-semibold transition-all flex items-center gap-1.5 self-start sm:self-auto cursor-pointer hover:scale-105 active:scale-95"
               >
                 <FontAwesomeIcon icon={copied ? faCheckCircle : faCopy} className={copied ? 'text-emerald-300' : ''} />
                 <span>{copied ? 'Copied!' : 'Copy Email'}</span>
@@ -124,7 +147,7 @@ export default function EditorialContact() {
 
         <button
           onClick={scrollToTop}
-          className="flex items-center gap-2 hover:text-[#1C1D20] transition-colors cursor-pointer group"
+          className="flex items-center gap-2 hover:text-[#1C1D20] transition-colors cursor-pointer group hover:opacity-100"
         >
           <span>BACK TO TOP</span>
           <FontAwesomeIcon icon={faArrowUp} className="group-hover:-translate-y-1 transition-transform" />

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import avatarPic from '../assets/Pasit Pukang.svg';
 import RotatingStamp from '../components/RotatingStamp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faEnvelope, faTerminal } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export default function EditorialHero() {
@@ -15,26 +15,40 @@ export default function EditorialHero() {
   return (
     <section className="w-full px-6 sm:px-10 lg:px-14 pt-8 sm:pt-12 pb-12 sm:pb-16 flex flex-col gap-8 sm:gap-12">
       
-      {/* Massive Typographic Hero Header */}
+      {/* Massive Typographic Hero Header with Mask Slide Reveal */}
       <div className="w-full select-none">
         <div className="flex flex-col leading-[0.85] tracking-tight">
           
-          {/* Top Line: FULLSTACK / FRONTEND DEVELOPER */}
-          <div className="flex flex-wrap items-baseline gap-2 sm:gap-4">
-            <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-black text-[#1C1D20] uppercase">
-              FULLSTACK /
-            </span>
-            <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-black text-[#1C1D20] uppercase">
-              DEVELOPER
-            </span>
+          {/* Top Line: FULLSTACK / DEVELOPER */}
+          <div className="overflow-hidden py-1">
+            <motion.div
+              initial={{ y: '120%' }}
+              animate={{ y: '0%' }}
+              transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+              className="flex flex-wrap items-baseline gap-2 sm:gap-4"
+            >
+              <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-black text-[#1C1D20] uppercase">
+                FULLSTACK /
+              </span>
+              <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-black text-[#1C1D20] uppercase">
+                DEVELOPER
+              </span>
+            </motion.div>
           </div>
 
-          {/* Bottom Line: PORTFOLIO in Outline / Wireframe Typography */}
-          <div className="w-full overflow-hidden">
-            <span className="stroke-text-thick text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[140px] font-display font-black uppercase tracking-wider block">
-              PORTFOLIO
-            </span>
+          {/* Bottom Line: PORTFOLIO in Outline Typography */}
+          <div className="overflow-hidden py-1">
+            <motion.div
+              initial={{ y: '120%' }}
+              animate={{ y: '0%' }}
+              transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+            >
+              <span className="stroke-text-thick text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[140px] font-display font-black uppercase tracking-wider block">
+                PORTFOLIO
+              </span>
+            </motion.div>
           </div>
+
         </div>
       </div>
 
@@ -42,9 +56,17 @@ export default function EditorialHero() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-2">
         
         {/* Left Column: Photo Card with Rotating Stamp */}
-        <div className="lg:col-span-5 relative flex justify-center lg:justify-start">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.85, ease: 'easeOut', delay: 0.4 }}
+          className="lg:col-span-5 relative flex justify-center lg:justify-start"
+        >
           <div className="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden border-[2px] border-[#1C1D20] shadow-xl bg-slate-900 group">
-            <img
+            <motion.img
+              initial={{ scale: 1.15 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1.2, ease: 'easeOut', delay: 0.45 }}
               src={avatarPic}
               alt="Pasit Pukang"
               className="w-full h-full object-cover filter grayscale contrast-125 group-hover:scale-105 transition-all duration-700 ease-out"
@@ -65,10 +87,15 @@ export default function EditorialHero() {
               color="#10B981" 
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Column: Statement Bio & Quick Highlights */}
-        <div className="lg:col-span-7 flex flex-col justify-between gap-6 lg:pl-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.85, ease: 'easeOut', delay: 0.5 }}
+          className="lg:col-span-7 flex flex-col justify-between gap-6 lg:pl-4"
+        >
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1C1D20]/30 text-xs font-mono font-semibold uppercase tracking-widest text-[#1C1D20]">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -88,7 +115,7 @@ export default function EditorialHero() {
           <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-[#1C1D20]/15">
             <button
               onClick={() => scrollTo('works-section')}
-              className="px-6 py-3 rounded-full bg-[#1C1D20] hover:bg-[#10B981] text-[#ECEAE5] hover:text-[#1C1D20] font-semibold text-xs uppercase tracking-wider transition-all duration-300 flex items-center gap-2 shadow-lg cursor-pointer"
+              className="px-6 py-3 rounded-full bg-[#1C1D20] hover:bg-[#10B981] text-[#ECEAE5] hover:text-[#1C1D20] font-semibold text-xs uppercase tracking-wider transition-all duration-300 flex items-center gap-2 shadow-lg cursor-pointer hover:scale-105 active:scale-95"
             >
               <span>Explore My Works</span>
               <FontAwesomeIcon icon={faArrowRight} className="text-[10px]" />
@@ -98,7 +125,7 @@ export default function EditorialHero() {
               href="https://github.com/PasitPukang"
               target="_blank"
               rel="noreferrer"
-              className="px-5 py-3 rounded-full border border-[#1C1D20]/40 hover:border-[#1C1D20] text-[#1C1D20] font-semibold text-xs uppercase tracking-wider transition-all flex items-center gap-2"
+              className="px-5 py-3 rounded-full border border-[#1C1D20]/40 hover:border-[#1C1D20] text-[#1C1D20] font-semibold text-xs uppercase tracking-wider transition-all flex items-center gap-2 hover:scale-105"
             >
               <FontAwesomeIcon icon={faGithub} className="text-sm" />
               <span>GitHub Profile</span>
@@ -106,14 +133,14 @@ export default function EditorialHero() {
 
             <button
               onClick={() => scrollTo('contact-section')}
-              className="px-5 py-3 rounded-full border border-[#1C1D20]/40 hover:border-[#1C1D20] text-[#1C1D20] font-semibold text-xs uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer"
+              className="px-5 py-3 rounded-full border border-[#1C1D20]/40 hover:border-[#1C1D20] text-[#1C1D20] font-semibold text-xs uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer hover:scale-105"
             >
               <FontAwesomeIcon icon={faEnvelope} className="text-xs" />
               <span>Contact Me</span>
             </button>
           </div>
 
-        </div>
+        </motion.div>
 
       </div>
 

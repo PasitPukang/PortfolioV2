@@ -9,19 +9,19 @@ const STAGES = [
     stage: 'STAGE 1',
     title: 'BRIEFING & REQUIREMENTS',
     description:
-      'In this stage, there is an in-depth acquaintance with the project goals and requirements. We analyze user stories, identify core constraints, outline functional specifications (SRS), and define clear deliverables and development milestones.',
+      'At this stage, there is an in-depth acquaintance with the project goals and requirements. We analyze user stories, identify core constraints, outline functional specifications (SRS), and determine clear deliverables and milestones.',
   },
   {
     stage: 'STAGE 2',
     title: 'ANALYTICS & ARCHITECTURE',
     description:
-      'Designing robust system architecture, database schema normalization (PostgreSQL on Supabase Cloud), RESTful API contracts, role-based access control (RLS), and triple-tier fallback systems to ensure high reliability and zero downtime.',
+      'Designing robust system architecture, database schema normalization (PostgreSQL on Supabase Cloud), RESTful API contracts, role-based access control (RLS), and fallback mechanisms to ensure high reliability and zero downtime.',
   },
   {
     stage: 'STAGE 3',
     title: 'PROTOTYPING & UI/UX',
     description:
-      'Developing clean wireframes, visual rhythm, responsive layout design, and design token systems. Ensuring intuitive micro-interactions and mobile-first touch optimization across every viewport.',
+      'Developing responsive wireframes, visual rhythm, design tokens, and fluid layout structure. Creating intuitive micro-interactions and mobile-first touch optimization across every viewport.',
   },
   {
     stage: 'STAGE 4',
@@ -39,7 +39,7 @@ const STAGES = [
     stage: 'STAGE 6',
     title: 'THE FINAL DEPLOYMENT',
     description:
-      'Building production bundles with Vite / Next.js, setting up automated CI/CD pipelines with GitHub Actions / GitHub Pages, and verifying live cloud database connections for 24/7 public availability.',
+      'Building optimized production bundles, setting up automated CI/CD pipelines with GitHub Actions / GitHub Pages, and verifying live cloud database connections for 24/7 public availability.',
   },
 ];
 
@@ -54,7 +54,13 @@ export default function StagesSection() {
     <section id="stages-section" className="w-full px-6 sm:px-10 lg:px-14 py-12 sm:py-20 border-t-[2px] border-[#1C1D20] bg-[#ECEAE5] relative">
       
       {/* Top Header */}
-      <div className="flex items-start justify-between gap-6 mb-10 sm:mb-14">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="flex items-start justify-between gap-6 mb-10 sm:mb-14"
+      >
         <div className="max-w-2xl">
           <span className="text-xs font-mono font-bold text-emerald-600 uppercase tracking-widest block mb-1">
             • Engineering Methodology
@@ -72,15 +78,19 @@ export default function StagesSection() {
             color="#1C1D20"
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* Accordion List */}
       <div className="border-t-[1.5px] border-[#1C1D20]/40">
         {STAGES.map((stage, idx) => {
           const isOpen = openIndex === idx;
           return (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
               className="border-b-[1.5px] border-[#1C1D20]/30 transition-colors duration-200"
             >
               {/* Accordion Row Header */}
@@ -89,16 +99,16 @@ export default function StagesSection() {
                 className="w-full py-5 sm:py-6 flex items-center justify-between text-left group cursor-pointer select-none"
               >
                 <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-16 md:gap-24">
-                  <span className="text-xs font-mono font-bold text-[#1C1D20]/60 uppercase tracking-wider w-20">
+                  <span className="text-xs font-mono font-bold text-[#1C1D20]/60 uppercase tracking-wider w-20 group-hover:text-emerald-700 transition-colors">
                     {stage.stage}
                   </span>
-                  <span className="text-xl sm:text-2xl md:text-3xl font-display font-black text-[#1C1D20] group-hover:text-emerald-700 tracking-wide uppercase transition-colors">
+                  <span className="text-xl sm:text-2xl md:text-3xl font-display font-black text-[#1C1D20] group-hover:text-emerald-700 tracking-wide uppercase transition-all duration-300 group-hover:translate-x-1">
                     {stage.title}
                   </span>
                 </div>
 
-                {/* Plus / Minus Icon */}
-                <div className="w-8 h-8 rounded-full border border-[#1C1D20]/30 flex items-center justify-center text-[#1C1D20] group-hover:border-[#1C1D20] group-hover:bg-[#1C1D20] group-hover:text-white transition-all shrink-0">
+                {/* Plus / Minus Icon with Smooth Rotation */}
+                <div className={`w-8 h-8 rounded-full border border-[#1C1D20]/30 flex items-center justify-center text-[#1C1D20] group-hover:border-[#1C1D20] group-hover:bg-[#1C1D20] group-hover:text-white transition-all duration-300 shrink-0 ${isOpen ? 'bg-[#1C1D20] text-white rotate-180' : ''}`}>
                   <FontAwesomeIcon
                     icon={isOpen ? faMinus : faPlus}
                     className="text-xs transition-transform duration-300"
@@ -113,7 +123,7 @@ export default function StagesSection() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.35, ease: 'easeInOut' }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                     className="overflow-hidden"
                   >
                     <div className="pb-6 sm:pb-8 sm:pl-28 md:pl-36 max-w-3xl">
@@ -124,7 +134,7 @@ export default function StagesSection() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </motion.div>
           );
         })}
       </div>
