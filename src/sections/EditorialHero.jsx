@@ -69,14 +69,14 @@ export default function EditorialHero() {
               animate={{ scale: 1 }}
               transition={{ duration: 1.2, ease: 'easeOut', delay: 0.45 }}
               src={avatarPic}
-              alt="Pasit Pukang"
+              alt="Pasit Pukang (Best)"
               className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
             
-            <div className="absolute bottom-4 left-4 right-4 text-white font-mono text-[11px] flex items-center justify-between no-print">
-              <span>PASIT PUKANG (BEST)</span>
-              <span className="text-emerald-400">● AVAILABLE 2026</span>
+            <div className="absolute bottom-4 left-4 right-4 text-white font-mono text-xs flex items-center justify-between no-print">
+              <span className="font-bold tracking-wider text-emerald-300">PASIT PUKANG (BEST)</span>
+              <span className="text-emerald-400">● READY 2026</span>
             </div>
           </div>
 
@@ -90,7 +90,7 @@ export default function EditorialHero() {
           </div>
         </motion.div>
 
-        {/* Right Column: Statement Bio & Quick Highlights */}
+        {/* Right Column: Prominent Name & Thai Introduction Statement */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -98,18 +98,34 @@ export default function EditorialHero() {
           className="print-hero-bio lg:col-span-7 flex flex-col justify-between gap-6 lg:pl-4"
         >
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1C1D20]/30 text-xs font-mono font-semibold uppercase tracking-widest text-[#1C1D20]">
+            
+            {/* Status Pill Tag */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#1C1D20]/30 text-xs font-mono font-bold uppercase tracking-widest text-[#1C1D20] bg-white/60 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse no-print" />
-              IT Senior Student @ KU Kamphaeng Saen
+              นิสิตชั้นปีที่ 4 เทคโนโลยีสารสนเทศ (IT) • ม.เกษตรศาสตร์ กำแพงแสน
             </div>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-[#1C1D20] font-normal leading-relaxed tracking-tight">
-              Hi, my name is <strong className="font-bold">Pasit (Best)</strong> and I am a <strong className="font-bold">Fullstack & Frontend Developer</strong>. My main goal is to create and develop quality products with clean architecture that bring real value to the company and users. Meanwhile, it will help me improve my engineering skills.
-            </p>
+            {/* Standout Prominent Name Heading */}
+            <div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1C1D20] tracking-tight leading-tight">
+                นายประสิทธิ์ พูกลาง <span className="text-emerald-700 font-black">(เบสท์)</span>
+              </h1>
+              <span className="text-xs sm:text-sm font-mono font-bold text-[#1C1D20]/60 uppercase tracking-widest block mt-1">
+                PASIT PUKANG — FULLSTACK & FRONTEND DEVELOPER
+              </span>
+            </div>
 
-            <p className="text-xs sm:text-sm text-[#1C1D20]/75 leading-relaxed">
-              เชี่ยวชาญการพัฒนาโมเดิร์นเว็บแอปพลิเคชันด้วย Next.js 14, React 19, TypeScript, Tailwind CSS, Supabase Cloud PostgreSQL, และ Prisma ORM พร้อมเรียนรู้สิ่งใหม่ๆ และร่วมสร้างคุณค่าให้ทีมทันทีครับ
-            </p>
+            {/* Thai Introduction Bio */}
+            <div className="space-y-3 pt-1">
+              <p className="text-base sm:text-lg md:text-xl text-[#1C1D20] font-medium leading-relaxed">
+                สวัสดีครับ ผมชื่อ <strong className="font-extrabold text-[#1C1D20] underline decoration-emerald-500 decoration-2 underline-offset-4">เบสท์ (ประสิทธิ์ พูกลาง)</strong> เป็น <strong className="font-extrabold text-[#1C1D20]">Fullstack & Frontend Developer</strong> ที่มีความมุ่งมั่นในการสร้างสรรค์และพัฒนาเว็บแอปพลิเคชันที่มีคุณภาพ ด้วย Clean Architecture ที่ตอบโจทย์การใช้งานจริงและสร้างคุณค่าให้แก่องค์กร ควบคู่ไปกับการยกระดับทักษะด้าน Software Engineering อย่างต่อเนื่อง
+              </p>
+
+              <p className="text-xs sm:text-sm md:text-base text-[#1C1D20]/80 leading-relaxed bg-white/75 p-4 sm:p-5 rounded-2xl border border-[#1C1D20]/15 shadow-sm">
+                💡 <strong>ความเชี่ยวชาญและจุดเด่น:</strong> เชี่ยวชาญการพัฒนา Modern Web Application ด้วย <strong>Next.js 14, React 19, TypeScript, Tailwind CSS, daisyUI</strong> ควบคู่กับงานระบบฐานข้อมูล Cloud Database <strong>Supabase (PostgreSQL)</strong> และ <strong>Prisma ORM</strong> มีความกระตือรือร้นในการเรียนรู้สิ่งใหม่ๆ และพร้อมร่วมสร้างสรรค์ผลงานคุณภาพให้กับทีมทันทีครับ
+              </p>
+            </div>
+
           </div>
 
           {/* Action Row */}
@@ -118,7 +134,7 @@ export default function EditorialHero() {
               onClick={() => scrollTo('works-section')}
               className="px-6 py-3 rounded-full bg-[#1C1D20] hover:bg-[#10B981] text-[#ECEAE5] hover:text-[#1C1D20] font-semibold text-xs uppercase tracking-wider transition-all duration-300 flex items-center gap-2 shadow-lg cursor-pointer hover:scale-105 active:scale-95"
             >
-              <span>Explore My Works</span>
+              <span>ดูผลงานโปรเจกต์ (Works)</span>
               <FontAwesomeIcon icon={faArrowRight} className="text-[10px]" />
             </button>
 
@@ -137,7 +153,7 @@ export default function EditorialHero() {
               className="px-5 py-3 rounded-full border border-[#1C1D20]/40 hover:border-[#1C1D20] text-[#1C1D20] font-semibold text-xs uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer hover:scale-105"
             >
               <FontAwesomeIcon icon={faEnvelope} className="text-xs" />
-              <span>Contact Me</span>
+              <span>ติดต่อฉัน (Contact)</span>
             </button>
           </div>
 
