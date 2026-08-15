@@ -55,7 +55,7 @@ export default function EditorialHero() {
       {/* Split Grid: Photo + Intro Bio Statement */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-2">
         
-        {/* Left Column: Photo Card with Rotating Stamp */}
+        {/* Left Column: Full Color Photo Card with Rotating Stamp */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -64,14 +64,14 @@ export default function EditorialHero() {
         >
           <div className="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden border-[2px] border-[#1C1D20] shadow-xl bg-slate-900 group">
             <motion.img
-              initial={{ scale: 1.15 }}
+              initial={{ scale: 1.1 }}
               animate={{ scale: 1 }}
               transition={{ duration: 1.2, ease: 'easeOut', delay: 0.45 }}
               src={avatarPic}
               alt="Pasit Pukang"
-              className="w-full h-full object-cover filter grayscale contrast-125 group-hover:scale-105 transition-all duration-700 ease-out"
+              className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-out"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
             
             <div className="absolute bottom-4 left-4 right-4 text-white font-mono text-[11px] flex items-center justify-between">
               <span>PASIT PUKANG (BEST)</span>
