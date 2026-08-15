@@ -1,0 +1,245 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faMicrophoneLines,
+  faMusic,
+  faUsers,
+  faBolt,
+  faEye,
+  faTimes,
+  faCompactDisc,
+} from '@fortawesome/free-solid-svg-icons';
+
+// Import all 6 activity images
+import musicPic1 from '../assets/activity/IArm-611.jpeg';
+import musicPic2 from '../assets/activity/IMG_5405 (2).jpeg';
+import musicPic3 from '../assets/activity/IMG_5440 (2).jpeg';
+import musicPic4 from '../assets/activity/52DA59B3-3379-4AA7-A359-EFCE39F1D6CF.jpeg';
+import musicPic5 from '../assets/activity/57B46AC6-F6D3-4384-A35C-C0282DB8BF26.jpeg';
+import musicPic6 from '../assets/activity/9D890EDD-E935-4AB0-ADBA-7C137DF319CD.jpeg';
+
+const GALLERY_ITEMS = [
+  {
+    image: musicPic1,
+    title: 'Live Concert & Stage Presence',
+    subtitle: 'Lead Vocalist @ Campus Music Festival',
+    tag: 'Live Show',
+    span: 'col-span-1 md:col-span-2 md:row-span-2 aspect-[4/3] md:aspect-auto',
+  },
+  {
+    image: musicPic2,
+    title: 'Band Rehearsal & Harmony',
+    subtitle: 'Tuesday Band Soundcheck & Prep',
+    tag: 'Rehearsal',
+    span: 'col-span-1 aspect-square',
+  },
+  {
+    image: musicPic3,
+    title: 'Acoustic & Stage Emotion',
+    subtitle: 'Vocal Performance & Audience Connection',
+    tag: 'Performance',
+    span: 'col-span-1 aspect-square',
+  },
+  {
+    image: musicPic4,
+    title: 'Band Chemistry & Teamwork',
+    subtitle: 'Tuesday Band Members on Stage',
+    tag: 'Team Synergy',
+    span: 'col-span-1 aspect-square',
+  },
+  {
+    image: musicPic5,
+    title: 'Energy & Stage Highlights',
+    subtitle: 'Capturing the Crowd Energy',
+    tag: 'Vocalist',
+    span: 'col-span-1 aspect-square',
+  },
+  {
+    image: musicPic6,
+    title: 'Festival Moments',
+    subtitle: 'Music as an Art of Expression',
+    tag: 'Experience',
+    span: 'col-span-1 md:col-span-2 aspect-video md:aspect-[21/9]',
+  },
+];
+
+const SOFT_SKILLS = [
+  {
+    icon: faMicrophoneLines,
+    title: 'Stage Presence & Communication',
+    desc: 'ความมั่นใจในการสื่อสาร การนำเสนอ และการถ่ายทอดความคิดต่อหน้าผู้คนและทีมงานอย่างชัดเจน',
+  },
+  {
+    icon: faUsers,
+    title: 'Team Harmony & Active Listening',
+    desc: 'การฟังเสียงเพื่อนร่วมทีม (Rhythm & Sync) เพื่อให้ผลงานออกมาเป็นหนึ่งเดียวเหมือนการเล่นดนตรีในวง',
+  },
+  {
+    icon: faBolt,
+    title: 'Improvisation & Problem Solving',
+    desc: 'ไหวพริบและการแก้ไขสถานการณ์เฉพาะหน้าเมื่อเกิดเหตุขัดข้องบนเวทีได้อย่างสุขุมและมืออาชีพ',
+  },
+  {
+    icon: faCompactDisc,
+    title: 'Discipline & Dedicated Practice',
+    desc: 'วินัยในการฝึกซ้อม ความละเอียดในการเก็บท่อนร้อง เช่นเดียวกับการเขียนโค้ดที่ต้องการความแม่นยำ',
+  },
+];
+
+export default function EditorialMusic() {
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
+
+  return (
+    <section id="music-section" className="w-full px-6 sm:px-10 lg:px-14 py-12 sm:py-20 border-t-[2px] border-[#1C1D20] bg-[#ECEAE5] select-none">
+      
+      {/* Section Header */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-14"
+      >
+        <div>
+          <span className="text-xs font-mono font-bold text-emerald-600 uppercase tracking-widest block mb-1">
+            • Passion & Special Talent
+          </span>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black text-[#1C1D20] uppercase tracking-tight leading-[0.9]">
+            LEAD VOCALIST / TUESDAY BAND
+          </h2>
+        </div>
+        <p className="text-xs sm:text-sm text-[#1C1D20]/75 max-w-lg font-normal leading-relaxed">
+          นอกจากความหลงใหลในการเขียนโค้ดและพัฒนา Web Application แล้ว ดนตรีคือพื้นที่ที่ช่วยหล่อหลอมทักษะการทำงานจริง ในฐานะ<strong>นักร้องนำ (Lead Vocalist) วง Tuesday</strong> ฝึกฝนความกล้าแสดงออก การสื่อสาร และการทำงานสอดประสานร่วมกับทีม
+        </p>
+      </motion.div>
+
+      {/* Bento Grid Photo Gallery */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+        {GALLERY_ITEMS.map((item, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: idx * 0.08 }}
+            data-cursor="view"
+            onClick={() => setSelectedPhoto(item)}
+            className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl border-[2px] border-[#1C1D20] bg-slate-950 cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 ${item.span}`}
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-full object-cover group-hover:scale-108 transition-all duration-700 ease-out"
+            />
+            
+            {/* Dark Overlay with Info */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-between p-5 sm:p-6 text-white">
+              <div className="flex justify-end">
+                <span className="px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-md font-mono text-[10px] font-bold uppercase tracking-wider text-white border border-white/30">
+                  {item.tag}
+                </span>
+              </div>
+
+              <div>
+                <h4 className="font-display font-black text-lg sm:text-xl uppercase tracking-wide group-hover:text-emerald-300 transition leading-tight">
+                  {item.title}
+                </h4>
+                <p className="text-[11px] text-slate-300 font-mono mt-0.5 opacity-90">
+                  {item.subtitle}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* 4 Soft Skills Pillar Cards */}
+      <div className="space-y-4">
+        <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#1C1D20]/60 block mb-2">
+          How Music Shapes My Engineering Mindset
+        </span>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {SOFT_SKILLS.map((skill, sIdx) => (
+            <motion.div
+              key={sIdx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: sIdx * 0.1 }}
+              className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border-[2px] border-[#1C1D20] shadow-md flex flex-col justify-between gap-3 hover:border-emerald-600 transition-colors"
+            >
+              <div className="w-10 h-10 rounded-2xl bg-emerald-100 border border-emerald-300 text-emerald-800 flex items-center justify-center text-sm shadow-sm">
+                <FontAwesomeIcon icon={skill.icon} />
+              </div>
+
+              <div>
+                <h4 className="font-bold text-xs sm:text-sm text-[#1C1D20] leading-snug">
+                  {skill.title}
+                </h4>
+                <p className="text-[11px] sm:text-xs text-[#1C1D20]/75 mt-1.5 leading-relaxed">
+                  {skill.desc}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Lightbox Photo Modal */}
+      <AnimatePresence>
+        {selectedPhoto && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1C1D20]/85 backdrop-blur-sm">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.25 }}
+              className="bg-[#ECEAE5] border-[2.5px] border-[#1C1D20] rounded-3xl p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
+            >
+              <button
+                onClick={() => setSelectedPhoto(null)}
+                className="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#1C1D20] text-white flex items-center justify-center hover:bg-emerald-600 transition cursor-pointer"
+              >
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
+
+              <div className="space-y-4">
+                <div className="rounded-2xl overflow-hidden border-[2px] border-[#1C1D20] bg-black max-h-[60vh] flex items-center justify-center">
+                  <img
+                    src={selectedPhoto.image}
+                    alt={selectedPhoto.title}
+                    className="w-full h-full max-h-[60vh] object-contain"
+                  />
+                </div>
+
+                <div className="flex items-center justify-between pt-2">
+                  <div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#1C1D20] text-white font-mono text-[10px] font-bold uppercase">
+                      {selectedPhoto.tag}
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-display font-black text-[#1C1D20] uppercase mt-1">
+                      {selectedPhoto.title}
+                    </h3>
+                    <p className="text-xs text-[#1C1D20]/70 font-mono">
+                      {selectedPhoto.subtitle} — Lead Vocalist of Tuesday Band
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => setSelectedPhoto(null)}
+                    className="text-xs font-mono font-bold uppercase tracking-wider text-[#1C1D20] hover:underline"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+    </section>
+  );
+}

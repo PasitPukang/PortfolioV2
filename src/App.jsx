@@ -7,6 +7,7 @@ import EditorialHero from './sections/EditorialHero';
 import MarqueeTicker from './components/MarqueeTicker';
 import EditorialWorks from './sections/EditorialWorks';
 import StagesSection from './sections/StagesSection';
+import EditorialMusic from './sections/EditorialMusic';
 import EditorialAbout from './sections/EditorialAbout';
 import EditorialContact from './sections/EditorialContact';
 
@@ -56,6 +57,9 @@ function App() {
 
         {/* Stages of Website Development (Interactive Accordion) */}
         <StagesSection />
+
+        {/* Music & Special Talent (Lead Vocalist of Tuesday Band) */}
+        <EditorialMusic />
 
         {/* About & Technical Competencies */}
         <EditorialAbout />

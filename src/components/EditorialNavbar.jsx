@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faBars, faTimes, faFilePdf } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import certFile from '../assets/css_certificate.pdf';
 
 export default function EditorialNavbar() {
@@ -50,6 +50,9 @@ export default function EditorialNavbar() {
         <button onClick={() => scrollTo('stages-section')} className="hover:opacity-60 transition cursor-pointer">
           Process
         </button>
+        <button onClick={() => scrollTo('music-section')} className="hover:opacity-60 transition cursor-pointer">
+          Music & Talent
+        </button>
         <button onClick={() => scrollTo('about-section')} className="hover:opacity-60 transition cursor-pointer">
           About
         </button>
@@ -90,6 +93,12 @@ export default function EditorialNavbar() {
             className="text-left font-display text-xl uppercase tracking-wider text-[#1C1D20] py-1 border-b border-[#1C1D20]/10"
           >
             Process (ขั้นตอนทำงาน)
+          </button>
+          <button 
+            onClick={() => scrollTo('music-section')}
+            className="text-left font-display text-xl uppercase tracking-wider text-[#1C1D20] py-1 border-b border-[#1C1D20]/10"
+          >
+            Music & Talent (ความสามารถด้านดนตรี)
           </button>
           <button 
             onClick={() => scrollTo('about-section')}
