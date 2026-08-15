@@ -19,47 +19,39 @@ export default function EditorialMusic() {
     <section id="music-section" className="w-full px-6 sm:px-10 lg:px-14 py-12 sm:py-20 border-t-[2px] border-[#1C1D20] bg-[#ECEAE5] select-none">
       
       {/* Section Header */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-14"
-      >
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-14">
         <div>
           <span className="text-xs font-mono font-bold text-emerald-600 uppercase tracking-widest block mb-1">
             {musicData.sectionTag}
           </span>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black text-[#1C1D20] uppercase tracking-tight leading-[0.9]">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black text-[#1C1D20] uppercase tracking-tight leading-none">
             {musicData.headline}
           </h2>
         </div>
         <p className="text-xs sm:text-sm text-[#1C1D20]/75 max-w-lg font-normal leading-relaxed">
           {musicData.description}
         </p>
-      </motion.div>
+      </div>
 
-      {/* Bento Grid Photo Gallery */}
-      <div className="print-music-grid grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+      {/* 6 Photos Grid (Screen: 3 Columns, Print: 3 Columns) */}
+      <div className="print-music-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-12 sm:mb-16">
         {musicData.gallery.map((item, idx) => (
-          <motion.div
+          <div
             key={item.id || idx}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: idx * 0.08 }}
             data-cursor="view"
             onClick={() => setSelectedPhoto(item)}
-            className={`print-music-card group relative overflow-hidden rounded-2xl sm:rounded-3xl border-[2px] border-[#1C1D20] bg-slate-950 cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 ${item.span}`}
+            className="print-music-card group relative overflow-hidden rounded-2xl sm:rounded-3xl border-[2px] border-[#1C1D20] bg-slate-900 cursor-pointer shadow-md hover:shadow-2xl transition-all duration-300 h-52 sm:h-64 flex flex-col justify-end"
           >
+            {/* Background Image */}
             <img
               src={item.image}
               alt={item.title}
-              className="print-music-img w-full h-full object-cover group-hover:scale-108 transition-all duration-700 ease-out"
+              loading="eager"
+              className="print-music-img absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-all duration-700 ease-out"
             />
             
-            {/* Dark Overlay with Info */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-between p-5 sm:p-6 text-white">
+            {/* Dark Overlay with Tag & Captions */}
+            <div className="relative z-10 p-4 sm:p-5 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-between h-full text-white pointer-events-none">
               <div className="flex justify-end">
                 <span className="px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-md font-mono text-[10px] font-bold uppercase tracking-wider text-white border border-white/30">
                   {item.tag}
@@ -67,15 +59,15 @@ export default function EditorialMusic() {
               </div>
 
               <div>
-                <h4 className="font-display font-black text-lg sm:text-xl uppercase tracking-wide group-hover:text-emerald-300 transition leading-tight">
+                <h4 className="font-display font-black text-base sm:text-lg uppercase tracking-wide group-hover:text-emerald-300 transition leading-tight">
                   {item.title}
                 </h4>
-                <p className="text-[11px] text-slate-300 font-mono mt-0.5 opacity-90">
+                <p className="text-[10px] sm:text-[11px] text-slate-300 font-mono mt-0.5 opacity-90 truncate">
                   {item.subtitle}
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 
@@ -87,12 +79,8 @@ export default function EditorialMusic() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {musicData.softSkills.map((skill, sIdx) => (
-            <motion.div
+            <div
               key={sIdx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: sIdx * 0.1 }}
               className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border-[2px] border-[#1C1D20] shadow-md flex flex-col justify-between gap-3 hover:border-emerald-600 transition-colors"
             >
               <div className="w-10 h-10 rounded-2xl bg-emerald-100 border border-emerald-300 text-emerald-800 flex items-center justify-center text-sm shadow-sm">
@@ -107,7 +95,7 @@ export default function EditorialMusic() {
                   {skill.desc}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

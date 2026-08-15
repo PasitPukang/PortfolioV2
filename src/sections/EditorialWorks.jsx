@@ -8,7 +8,6 @@ import {
   faCheckCircle,
   faGlobe,
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { data as projectsData } from '../contents/Project';
 
 export default function EditorialWorks() {
@@ -18,36 +17,26 @@ export default function EditorialWorks() {
     <section id="works-section" className="w-full px-6 sm:px-10 lg:px-14 py-12 sm:py-16 border-t-[2px] border-[#1C1D20]/15">
       
       {/* Section Header */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-12"
-      >
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-12">
         <div>
           <span className="text-xs font-mono font-bold text-emerald-600 uppercase tracking-widest block mb-1">
             • Selected Projects
           </span>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black text-[#1C1D20] tracking-tight uppercase">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black text-[#1C1D20] tracking-tight uppercase leading-none">
             FEATURED WORKS
           </h2>
         </div>
         <p className="text-xs sm:text-sm text-[#1C1D20]/70 max-w-md font-normal">
           ผลงานพัฒนาเว็บแอปพลิเคชันจริง ครอบคลุมทั้ง Fullstack Serverless, Cloud Database (Supabase PostgreSQL), Real-time IoT และ Interactive Frontend
         </p>
-      </motion.div>
+      </div>
 
       {/* 2-Column Editorial Grid */}
       <div className="print-works-grid grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
         {projectsData.map((project, idx) => (
-          <motion.div
+          <div
             key={idx}
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.7, delay: idx * 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="print-work-card flex flex-col justify-between border-[2px] border-[#1C1D20] rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-[#F4F3EF] hover:bg-white transition-all duration-500 shadow-lg hover:shadow-2xl group"
+            className="print-work-card flex flex-col justify-between border-[2px] border-[#1C1D20] rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-[#F4F3EF] hover:bg-white transition-all duration-300 shadow-md hover:shadow-2xl group"
           >
             {/* Card Top: Title, Subtitle, and Pill Tags */}
             <div className="flex flex-col gap-4 mb-4">
@@ -85,11 +74,12 @@ export default function EditorialWorks() {
             <div
               data-cursor="view"
               onClick={() => setActiveModal(project)}
-              className="relative aspect-video rounded-xl overflow-hidden border-[1.5px] border-[#1C1D20] bg-slate-900 cursor-pointer mb-4 group/img shadow-inner"
+              className="print-work-img-wrapper relative h-48 sm:h-60 rounded-xl overflow-hidden border-[1.5px] border-[#1C1D20] bg-slate-900 cursor-pointer mb-4 group/img shadow-inner"
             >
               <img
                 src={project.picture}
                 alt={project.title}
+                loading="eager"
                 className="print-work-img w-full h-full object-cover group-hover/img:scale-108 transition-all duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-[#1C1D20]/20 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none no-print">
@@ -141,7 +131,7 @@ export default function EditorialWorks() {
               </div>
             </div>
 
-          </motion.div>
+          </div>
         ))}
       </div>
 

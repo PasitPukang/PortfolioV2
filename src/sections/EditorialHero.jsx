@@ -17,33 +17,34 @@ export default function EditorialHero() {
       
       {/* Massive Typographic Hero Header with Mask Slide Reveal */}
       <div className="w-full select-none">
-        <div className="flex flex-col leading-[0.85] tracking-tight">
+        <div className="flex flex-col gap-1 tracking-tight">
           
           {/* Top Line: FULLSTACK / DEVELOPER */}
-          <div className="overflow-hidden py-1">
+          <div className="overflow-hidden py-1 leading-none">
             <motion.div
               initial={{ y: '120%' }}
               animate={{ y: '0%' }}
               transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-              className="flex flex-wrap items-baseline gap-2 sm:gap-4"
+              className="flex flex-wrap items-baseline gap-2 sm:gap-4 leading-none"
             >
-              <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-black text-[#1C1D20] uppercase">
+              <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-black text-[#1C1D20] uppercase leading-none">
                 FULLSTACK /
               </span>
-              <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-black text-[#1C1D20] uppercase">
+              <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-black text-[#1C1D20] uppercase leading-none">
                 DEVELOPER
               </span>
             </motion.div>
           </div>
 
           {/* Bottom Line: PORTFOLIO in Outline Typography */}
-          <div className="overflow-hidden py-1">
+          <div className="overflow-hidden py-1 leading-none">
             <motion.div
               initial={{ y: '120%' }}
               animate={{ y: '0%' }}
               transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+              className="leading-none"
             >
-              <span className="stroke-text-thick text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[140px] font-display font-black uppercase tracking-wider block">
+              <span className="stroke-text-thick text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[140px] font-display font-black uppercase tracking-wider block leading-none">
                 PORTFOLIO
               </span>
             </motion.div>
