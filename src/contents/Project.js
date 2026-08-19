@@ -7,46 +7,46 @@ import picP3 from '../assets/03.png';
 export const data = [
     {
         date: "2026",
-        title: "ระบบติดตามการดำเนินงานของนิสิต (Student Progress Tracking Web App)",
+        title: "Student Progress Tracking Web App — ระบบติดตามการดำเนินงานของนิสิต",
         category: "Fullstack & Cloud Database",
         materials: [
             { type: faGlobe, link: "https://pasitpukang.github.io/PortfolioV2/project_fiveper/", label: "Live Demo" },
             { type: faGithub, link: "https://github.com/PasitPukang/project_fiveper.git", label: "Source Code" }
         ],
         descriptions: [
-            "เว็บแอปพลิเคชันระบบติดตามการดำเนินงานของนิสิตแบบครบวงจร รองรับ 3 บทบาทการทำงาน (ผู้ดูแลระบบ, อาจารย์, นิสิต) พร้อมแดชบอร์ดสรุปสถิติ, รายงานภาพรวมรายวิชา, ระบบให้ข้อเสนอแนะพร้อมการตอบกลับ และระบบจัดการโครงการ",
-            "สถาปัตยกรรมระบบแบบ Serverless เชื่อมต่อฐานข้อมูล Supabase Cloud PostgreSQL แบบ Real-time พร้อมความปลอดภัยระดับ Row Level Security (RLS) และระบบสำรองข้อมูลออฟไลน์ (LocalStorage Offline Fallback) รองรับการใช้งาน 24/7 ทุกอุปกรณ์"
+            "พัฒนาเว็บแอปพลิเคชันติดตามการดำเนินงานของนิสิตแบบครบวงจร รองรับ 3 บทบาทผู้ใช้งาน (ผู้ดูแลระบบ, อาจารย์, นิสิต) พร้อมแดชบอร์ดสรุปสถิติและระบบให้ข้อเสนอแนะ",
+            "ออกแบบสถาปัตยกรรมแบบ Serverless เชื่อมต่อ Supabase Cloud PostgreSQL แบบ Real-time พร้อม Row Level Security (RLS) และระบบสำรองข้อมูลออฟไลน์ (LocalStorage Offline Fallback)"
         ],
-        skills: ["React.js", "TypeScript", "Vite", "Supabase Cloud", "PostgreSQL", "RLS Security", "Tailwind CSS", "Recharts", "REST API", "Git"],
+        skills: ["React.js", "TypeScript", "Vite", "Supabase Cloud", "PostgreSQL", "Tailwind CSS", "Recharts", "RLS Security", "REST API", "Git"],
         picture: picP1,
     },
     {
         date: "2026",
-        title: "ระบบควบคุมความเร็วรถยนต์ผ่านเว็บ (IoT Control Web Application)",
+        title: "IoT Control Web Application — ระบบควบคุมความเร็วรถยนต์ผ่านเว็บ",
         category: "Frontend & Real-time Integration",
         materials: [
             { type: faGithub, link: "https://github.com/PasitPukang/Appcontrol-Final_Project.git", label: "Source Code" }
         ],
         descriptions: [
-            "เว็บสำหรับสั่งการและตรวจสอบสถานะของอุปกรณ์ IoT ผ่านหน้าจอแบบ Real-time",
-            "เขียนส่วนหน้าบ้านด้วย React + Tailwind CSS และเชื่อมต่อดึงข้อมูลสถานะอุปกรณ์จาก Firebase Realtime Database มาแสดงผลบนหน้า Dashboard สรุปข้อมูลให้อ่านง่าย"
+            "พัฒนาเว็บสำหรับสั่งการและตรวจสอบสถานะอุปกรณ์ IoT แบบ Real-time เชื่อมต่อ Firebase Realtime Database",
+            "เขียนส่วนหน้าบ้านด้วย React + Tailwind CSS แสดงผลบนแดชบอร์ดสรุปข้อมูลให้อ่านง่าย"
         ],
-        skills: ["React.js", "Tailwind CSS", "Firebase", "Real-time Data", "JavaScript", "Java", "Git"],
+        skills: ["React.js", "Tailwind CSS", "Firebase", "JavaScript", "Java", "Real-time Data", "Git"],
         picture: picP3,
     },
     {
         date: "2025",
-        title: "ระบบจองห้องประชุมออนไลน์อัจฉริยะ (MeetingRoom PRO v2.0)",
+        title: "MeetingRoom PRO v2.0 — ระบบจองห้องประชุมออนไลน์อัจฉริยะ",
         category: "Fullstack & Interactive Web App",
         materials: [
             { type: faGlobe, link: "https://pasitpukang.github.io/PortfolioV2/Project/", label: "Live Demo" },
             { type: faGithub, link: "https://github.com/PasitPukang/Project.git", label: "Source Code" }
         ],
         descriptions: [
-            "เว็บแอปพลิเคชันจองห้องประชุมออนไลน์เวอร์ชันปรับปรุงใหม่ ดีไซน์มินิมอล ใช้งานง่าย รองรับการใช้งานสมบูรณ์แบบบนสมาร์ตโฟนและคอมพิวเตอร์",
-            "พัฒนาด้วย React 19, Vite และ Tailwind CSS มีระบบเช็กสถานะห้องว่างแบบ Real-time, ระบบป้องกันการจองเวลาซ้ำ (Double Booking Prevention), ฟอร์มจองห้องแบบโต้ตอบ, รายการจองของฉัน ตลอดจนระบบผู้ดูแลระบบ (Admin Panel)"
+            "พัฒนาเว็บแอปพลิเคชันจองห้องประชุมออนไลน์ ดีไซน์มินิมอล รองรับสมาร์ตโฟนและคอมพิวเตอร์เต็มรูปแบบ",
+            "มีระบบเช็กสถานะห้องว่างแบบ Real-time, ระบบป้องกันการจองซ้ำ (Double Booking Prevention) และ Admin Panel จัดการห้องประชุม"
         ],
-        skills: ["React 19", "Vite", "Tailwind CSS v4", "Framer Motion", "JavaScript (ES6+)", "Context API", "REST API", "LocalStorage Sync", "Git"],
+        skills: ["React 19", "Vite", "Tailwind CSS v4", "Framer Motion", "Context API", "REST API", "JavaScript (ES6+)", "Git"],
         picture: picP2,
     }
 ];
