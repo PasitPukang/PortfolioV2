@@ -15,7 +15,7 @@ export const data = {
     skills: [
         {
             category: "Full Stack & Web Frameworks",
-            items: ["Next.js 14", "React 18", "JavaScript (ES6+)", "TypeScript", "Vite"]
+            items: ["Next.js 14", "React 18", "JavaScript (ES6+)", "TypeScript", "Vite",]
         },
         {
             category: "Database & Backend Tech",

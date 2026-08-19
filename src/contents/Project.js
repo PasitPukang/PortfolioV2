@@ -22,7 +22,7 @@ export const data = [
     },
     {
         date: "2026",
-        title: "ระบบควบคุมและจัดการอุปกรณ์ IoT (IoT Control Web Application)",
+        title: "ระบบควบคุมความเร็วรถยนต์ผ่านเว็บ (IoT Control Web Application)",
         category: "Frontend & Real-time Integration",
         materials: [
             { type: faGithub, link: "https://github.com/PasitPukang/Appcontrol-Final_Project.git", label: "Source Code" }
@@ -35,7 +35,7 @@ export const data = [
         picture: picP3,
     },
     {
-        date: "2026",
+        date: "2025",
         title: "ระบบจองห้องประชุมออนไลน์อัจฉริยะ (MeetingRoom PRO v2.0)",
         category: "Fullstack & Interactive Web App",
         materials: [

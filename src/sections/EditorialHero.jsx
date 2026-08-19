@@ -31,7 +31,7 @@ export default function EditorialHero() {
                 FULLSTACK /
               </span>
               <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-black text-[#1C1D20] uppercase leading-none">
-                DEVELOPER
+                FRONTEND DEV
               </span>
             </motion.div>
           </div>
@@ -75,18 +75,8 @@ export default function EditorialHero() {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
             
             <div className="absolute bottom-4 left-4 right-4 text-white font-mono text-xs flex items-center justify-between no-print">
-              <span className="font-bold tracking-wider text-emerald-300">PASIT PUKANG (BEST)</span>
-              <span className="text-emerald-400">● READY 2026</span>
+              <span className="text-emerald-400">PASIT PUKANG (BEST)</span>
             </div>
-          </div>
-
-          {/* Floating Rotating Stamp overlapping photo corner */}
-          <div className="absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 z-20 no-print">
-            <RotatingStamp 
-              text="• OPEN FOR INTERNSHIP 2026 • READY TO WORK •" 
-              size={120} 
-              color="#10B981" 
-            />
           </div>
         </motion.div>
 
@@ -108,21 +98,19 @@ export default function EditorialHero() {
             {/* Standout Prominent Name Heading */}
             <div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1C1D20] tracking-tight leading-tight">
-                นายประสิทธิ์ พูกลาง <span className="text-emerald-700 font-black">(เบสท์)</span>
+                นายพสิษฐ์ ภูฆัง <span className="text-emerald-700 font-black">(เบสท์)</span>
               </h1>
-              <span className="text-xs sm:text-sm font-mono font-bold text-[#1C1D20]/60 uppercase tracking-widest block mt-1">
-                PASIT PUKANG — FULLSTACK & FRONTEND DEVELOPER
-              </span>
+              
             </div>
 
             {/* Thai Introduction Bio */}
             <div className="space-y-3 pt-1">
               <p className="text-base sm:text-lg md:text-xl text-[#1C1D20] font-medium leading-relaxed">
-                สวัสดีครับ ผมชื่อ <strong className="font-extrabold text-[#1C1D20] underline decoration-emerald-500 decoration-2 underline-offset-4">เบสท์ (ประสิทธิ์ พูกลาง)</strong> เป็น <strong className="font-extrabold text-[#1C1D20]">Fullstack & Frontend Developer</strong> ที่มีความมุ่งมั่นในการสร้างสรรค์และพัฒนาเว็บแอปพลิเคชันที่มีคุณภาพ ด้วย Clean Architecture ที่ตอบโจทย์การใช้งานจริงและสร้างคุณค่าให้แก่องค์กร ควบคู่ไปกับการยกระดับทักษะด้าน Software Engineering อย่างต่อเนื่อง
+                เป็น <strong className="font-extrabold text-[#1C1D20]">Fullstack & Frontend Developer</strong> ที่มีความมุ่งมั่นในการสร้างสรรค์และพัฒนาเว็บแอปพลิเคชันที่มีคุณภาพ ด้วย Clean Architecture ที่ตอบโจทย์การใช้งานจริงและสร้างคุณค่าให้แก่องค์กร ควบคู่ไปกับการยกระดับทักษะด้าน Software Engineering อย่างต่อเนื่อง
               </p>
 
               <p className="text-xs sm:text-sm md:text-base text-[#1C1D20]/80 leading-relaxed bg-white/75 p-4 sm:p-5 rounded-2xl border border-[#1C1D20]/15 shadow-sm">
-                💡 <strong>ความเชี่ยวชาญและจุดเด่น:</strong> เชี่ยวชาญการพัฒนา Modern Web Application ด้วย <strong>Next.js 14, React 19, TypeScript, Tailwind CSS, daisyUI</strong> ควบคู่กับงานระบบฐานข้อมูล Cloud Database <strong>Supabase (PostgreSQL)</strong> และ <strong>Prisma ORM</strong> มีความกระตือรือร้นในการเรียนรู้สิ่งใหม่ๆ และพร้อมร่วมสร้างสรรค์ผลงานคุณภาพให้กับทีมทันทีครับ
+                💡 <strong>จุดเด่น:</strong> พัฒนา Modern Web Application ด้วย <strong>Next.js 14, React 19, TypeScript, Tailwind CSS, daisyUI</strong> ควบคู่กับงานระบบฐานข้อมูล Cloud Database <strong>Supabase (PostgreSQL)</strong> และ <strong>Prisma ORM</strong> มีความกระตือรือร้นในการเรียนรู้สิ่งใหม่ๆ และพร้อมร่วมสร้างสรรค์ผลงานคุณภาพให้กับทีมทันทีครับ
               </p>
             </div>
 

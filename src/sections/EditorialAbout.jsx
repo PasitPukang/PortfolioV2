@@ -13,7 +13,7 @@ import { data as headerData } from '../contents/header';
 export default function EditorialAbout() {
   return (
     <section id="about-section" className="w-full px-6 sm:px-10 lg:px-14 py-12 sm:py-20 border-t-[2px] border-[#1C1D20]/15 bg-[#F4F3EF]">
-      
+
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-14">
         <div>
@@ -30,10 +30,10 @@ export default function EditorialAbout() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10">
-        
+
         {/* Left Column: Education & Story (5 cols) */}
         <div className="lg:col-span-5 flex flex-col gap-6">
-          
+
           {/* Education Card */}
           <div className="p-6 sm:p-7 rounded-3xl bg-white border-[2px] border-[#1C1D20] shadow-md space-y-4">
             <div className="flex items-center justify-between border-b border-[#1C1D20]/15 pb-3">
@@ -61,18 +61,7 @@ export default function EditorialAbout() {
             </div>
           </div>
 
-          {/* Passion Statement */}
-          <div className="p-6 sm:p-7 rounded-3xl bg-[#1C1D20] text-[#ECEAE5] shadow-xl space-y-3">
-            <span className="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-widest block">
-              • Engineering Mindset
-            </span>
-            <h3 className="text-xl font-display font-bold uppercase tracking-wide">
-              Clean Architecture & Real Impact
-            </h3>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              {aboutData.story}
-            </p>
-          </div>
+
 
           {/* Verified Certificates */}
           <div className="p-6 sm:p-7 rounded-3xl bg-white border-[2px] border-[#1C1D20] shadow-md space-y-4">
