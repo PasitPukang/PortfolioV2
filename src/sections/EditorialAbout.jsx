@@ -140,7 +140,7 @@ export default function EditorialAbout() {
               </p>
             </div>
             <a
-              href="mailto:pasit.pu@ku.th"
+              href="#contact-section"
               className="px-5 py-2.5 rounded-full bg-[#1C1D20] hover:bg-emerald-600 text-white font-semibold text-xs uppercase tracking-wider transition-all self-start sm:self-auto shadow-md"
             >
               Get In Touch

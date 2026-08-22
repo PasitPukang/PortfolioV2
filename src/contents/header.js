@@ -10,7 +10,12 @@ export const data = {
     tagline: "Building Clean, Functional & Modern Web Apps",
     subtitle: "นิสิตปี 4 สาขาเทคโนโลยีสารสนเทศ มก.กำแพงแสน",
     caption: "สวัสดีครับผม เบสท์ นิสิตปี 4 IT มก.กำแพงแสน ครับ มีความสนใจในการพัฒนาเว็บแอปพลิเคชันทั้งส่วน Front End และ Full Stack ช่วงที่ผ่านมาได้ลุยทำโปรเจกต์จริงด้วย Next.js, React, Tailwind CSS, Prisma ORM และ Supabase กำลังมองหาโอกาสเข้าฝึกงานเพื่อลุยงานจริง ร่วมสร้างประโยชน์ให้ทีม และเปิดรับประสบการณ์ใหม่ๆ ครับ",
-    email: "pasit.pu@ku.th",
+    email: "pasitpukang0@gmail.com",
+    personalEmail: "pasitpukang0@gmail.com",
+    universityEmail: "pasit.pu@ku.th",
+    phone: "095-750-1623",
+    line: "095-750-1623",
+    instagram: "https://www.instagram.com/_bubx__best.t/",
     github: "https://github.com/PasitPukang",
     location: "นครปฐม / กรุงเทพมหานคร",
     quote: "Code with Purpose, Design with Empathy.",
@@ -26,6 +31,3 @@ export const data = {
         { name: "Java Basic Certificate", issuer: "HackerRank Verified", file: cert3 },
     ]
 }
-
-
-
