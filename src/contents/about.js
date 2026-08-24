@@ -12,6 +12,14 @@ export const data = {
         faculty: "คณะศิลปศาสตร์และวิทยาศาสตร์"
     },
 
+    internship: {
+        period: "23 พฤศจิกายน 2569 – 12 มีนาคม 2570 (สามารถฝึกต่อเนื่องได้มากกว่านั้น)",
+        periodEn: "23 Nov 2026 – 12 Mar 2027 (or extended)",
+        duration: "ระยะเวลา 3 เดือน 19 วัน หรือ 16 สัปดาห์",
+        durationEn: "3 Months 19 Days (16 Weeks)",
+        status: "พร้อมเริ่มฝึกงาน (On-site / Hybrid / Remote)"
+    },
+
     skills: [
         {
             category: "Full Stack & Web Frameworks",
@@ -31,5 +39,3 @@ export const data = {
         }
     ]
 };
-
-

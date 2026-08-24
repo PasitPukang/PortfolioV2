@@ -18,9 +18,9 @@ export default function EditorialNavbar() {
 
       {/* Right Status Badge */}
       <div className="flex items-center gap-2">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#1C1D20]/20 text-[11px] font-mono font-semibold uppercase tracking-wider text-[#1C1D20] bg-white/50 shadow-sm">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#1C1D20]/20 text-[11px] font-mono font-semibold uppercase tracking-wider text-[#1C1D20] bg-white/60 shadow-sm">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span>Available 2026</span>
+          <span>พร้อมฝึกงาน: 23 พ.ย. 69 – 12 มี.ค. 70</span>
         </div>
       </div>
     </nav>
