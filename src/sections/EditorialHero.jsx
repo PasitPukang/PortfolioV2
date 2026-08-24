@@ -13,7 +13,7 @@ export default function EditorialHero() {
   };
 
   return (
-    <section className="w-full px-6 sm:px-10 lg:px-14 pt-8 sm:pt-12 pb-12 sm:pb-16 flex flex-col gap-8 sm:gap-12">
+    <section id="hero-section" className="w-full px-6 sm:px-10 lg:px-14 pt-8 sm:pt-12 pb-12 sm:pb-16 flex flex-col gap-8 sm:gap-12">
       
       {/* Massive Typographic Hero Header with Mask Slide Reveal */}
       <div className="w-full select-none">

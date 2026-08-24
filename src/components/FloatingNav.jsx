@@ -1,0 +1,106 @@
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBriefcase,
+  faMusic,
+  faUser,
+  faEnvelope,
+  faHome,
+} from '@fortawesome/free-solid-svg-icons';
+
+const NAV_ITEMS = [
+  { id: 'hero-section', label: 'Home', icon: faHome },
+  { id: 'works-section', label: 'Work', icon: faBriefcase },
+  { id: 'music-section', label: 'Music & Talent', icon: faMusic },
+  { id: 'about-section', label: 'About', icon: faUser },
+  { id: 'contact-section', label: 'Contact', icon: faEnvelope },
+];
+
+export default function FloatingNav() {
+  const [activeSection, setActiveSection] = useState('hero-section');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 250; // offset for trigger
+
+      const sectionElements = NAV_ITEMS.map(item => {
+        return {
+          id: item.id,
+          element: document.getElementById(item.id),
+        };
+      });
+
+      for (let i = sectionElements.length - 1; i >= 0; i--) {
+        const item = sectionElements[i];
+        if (item.element) {
+          const top = item.element.offsetTop;
+          if (scrollPosition >= top) {
+            setActiveSection(item.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollTo = (id) => {
+    if (id === 'hero-section') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setActiveSection('hero-section');
+      return;
+    }
+
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(id);
+    }
+  };
+
+  return (
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 select-none no-print">
+      <motion.nav 
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        className="flex items-center gap-1 sm:gap-1.5 p-1.5 rounded-full bg-[#1C1D20]/90 backdrop-blur-lg border border-[#1C1D20] shadow-[0_10px_35px_rgba(0,0,0,0.3)] max-w-[95vw]"
+      >
+        {NAV_ITEMS.map((item) => {
+          const isActive = activeSection === item.id;
+          return (
+            <button
+              key={item.id}
+              onClick={() => scrollTo(item.id)}
+              className={`relative px-3 sm:px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                isActive
+                  ? 'bg-[#E7E5E0] text-[#1C1D20] font-bold shadow-md'
+                  : 'text-[#ECEAE5]/70 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              {/* Active Background highlight */}
+              {isActive && (
+                <motion.div
+                  layoutId="activeFloatingPill"
+                  className="absolute inset-0 bg-[#E7E5E0] rounded-full -z-10 shadow-sm"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
+              )}
+
+              <FontAwesomeIcon 
+                icon={item.icon} 
+                className={`text-[11px] ${isActive ? 'text-emerald-700' : 'opacity-70'}`} 
+              />
+              <span className="hidden xs:inline sm:inline">{item.label}</span>
+            </button>
+          );
+        })}
+      </motion.nav>
+    </div>
+  );
+}

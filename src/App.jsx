@@ -9,6 +9,7 @@ import EditorialWorks from './sections/EditorialWorks';
 import EditorialMusic from './sections/EditorialMusic';
 import EditorialAbout from './sections/EditorialAbout';
 import EditorialContact from './sections/EditorialContact';
+import FloatingNav from './components/FloatingNav';
 
 function App() {
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
@@ -31,7 +32,10 @@ function App() {
       {/* 2. Interactive Custom Fluid Cursor */}
       <CustomCursor />
 
-      {/* 3. Subtle Ambient Canvas Spotlight */}
+      {/* 3. Floating Navigation Dock with ScrollSpy */}
+      <FloatingNav />
+
+      {/* 4. Subtle Ambient Canvas Spotlight */}
       <div 
         className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300 hidden md:block no-print"
         style={{
@@ -39,7 +43,7 @@ function App() {
         }}
       />
 
-      {/* 4. Main Framed Editorial Canvas (Serhii Korzhov / UPROCK Agency Style) */}
+      {/* 5. Main Framed Editorial Canvas (Serhii Korzhov / UPROCK Agency Style) */}
       <div className="main-framed-canvas w-full max-w-[1400px] mx-auto bg-[#ECEAE5] border-[2.5px] border-[#1C1D20] rounded-[24px] sm:rounded-[36px] shadow-2xl overflow-hidden relative z-10">
         
         {/* Top Navbar */}
