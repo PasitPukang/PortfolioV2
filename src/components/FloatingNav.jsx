@@ -64,12 +64,12 @@ export default function FloatingNav() {
   };
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 select-none no-print">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 md:bottom-auto md:left-auto md:right-6 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 z-40 select-none no-print">
       <motion.nav 
-        initial={{ y: 50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className="flex items-center gap-1 sm:gap-1.5 p-1.5 rounded-full bg-[#1C1D20]/90 backdrop-blur-lg border border-[#1C1D20] shadow-[0_10px_35px_rgba(0,0,0,0.3)] max-w-[95vw]"
+        className="flex flex-row md:flex-col items-center gap-1 sm:gap-1.5 md:gap-2 p-1.5 md:p-2 rounded-full bg-[#1C1D20]/90 backdrop-blur-lg border border-[#1C1D20] shadow-[0_10px_35px_rgba(0,0,0,0.3)] max-w-[95vw] md:max-w-none"
       >
         {NAV_ITEMS.map((item) => {
           const isActive = activeSection === item.id;
@@ -77,11 +77,12 @@ export default function FloatingNav() {
             <button
               key={item.id}
               onClick={() => scrollTo(item.id)}
-              className={`relative px-3 sm:px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+              className={`relative px-3 sm:px-4 md:px-4 py-2 md:py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center justify-center md:justify-start gap-2 cursor-pointer whitespace-nowrap w-auto md:w-full ${
                 isActive
                   ? 'bg-[#E7E5E0] text-[#1C1D20] font-bold shadow-md'
                   : 'text-[#ECEAE5]/70 hover:text-white hover:bg-white/10'
               }`}
+              title={item.label}
             >
               {/* Active Background highlight */}
               {isActive && (
@@ -94,9 +95,9 @@ export default function FloatingNav() {
 
               <FontAwesomeIcon 
                 icon={item.icon} 
-                className={`text-[11px] ${isActive ? 'text-emerald-700' : 'opacity-70'}`} 
+                className={`text-[12px] ${isActive ? 'text-emerald-700' : 'opacity-70'}`} 
               />
-              <span className="hidden xs:inline sm:inline">{item.label}</span>
+              <span className="hidden xs:inline sm:inline md:inline">{item.label}</span>
             </button>
           );
         })}
