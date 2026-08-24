@@ -15,7 +15,7 @@ export const musicData = {
   bandName: "Tuesday Band",
   role: "นักร้องนำ (Lead Vocalist)",
   
-  // คำอธิบายภาพรวม (คุณสามารถเข้ามาแก้ไขข้อความตรงนี้ได้ตลอดเวลา)
+  // คำอธิบายภาพรวม
   description: "นอกจากความหลงใหลในการเขียนโค้ดและพัฒนา Web Application แล้ว ดนตรีคือพื้นที่ที่ช่วยหล่อหลอมทักษะการทำงานจริง ในฐานะนักร้องนำ (Lead Vocalist) วง Tuesday ฝึกฝนความกล้าแสดงออก การสื่อสาร และการทำงานสอดประสานร่วมกับทีม",
 
   // ==========================================
@@ -42,55 +42,55 @@ export const musicData = {
   ],
 
   // ==========================================
-  // 3. รูปภาพกิจกรรม & การแสดงสด (แก้แคปชันรูปตรงนี้ได้เลย)
+  // 3. รูปภาพกิจกรรม & แคปชันภาษาไทยและอังกฤษ (TH & EN)
   // ==========================================
   gallery: [
     {
       id: 1,
-      image: musicPic1,
-      title: "Live Concert & Stage Presence",
-      subtitle: "Lead Vocalist @ Campus Music Festival",
-      tag: "Live Show",
+      image: musicPic2,
+      title: "การแสดงสดบนเวที • Live Concert & Stage Presence",
+      subtitle: "นักร้องนำวง Tuesday ในงานเทศกาลดนตรี • Lead Vocalist @ Music Festival",
+      tag: "Live Show • การแสดงสด",
       span: "col-span-1 md:col-span-2 md:row-span-2 aspect-[4/3] md:aspect-auto",
     },
     {
       id: 2,
-      image: musicPic2,
-      title: "Band Rehearsal & Harmony",
-      subtitle: "Tuesday Band Soundcheck & Prep",
-      tag: "Rehearsal",
+      image: musicPic4,
+      title: "การซ้อมวงและความสอดประสาน • Band Rehearsal & Harmony",
+      subtitle: "ฝึกซ้อมและปรับบาลานซ์เสียงร่วมกัน • Soundcheck & Rehearsal",
+      tag: "Rehearsal • การซ้อมวง",
       span: "col-span-1 aspect-square",
     },
     {
       id: 3,
-      image: musicPic3,
-      title: "Acoustic & Stage Emotion",
-      subtitle: "Vocal Performance & Audience Connection",
-      tag: "Performance",
+      image: musicPic5,
+      title: "การถ่ายทอดอารมณ์เพลง • Vocal Emotion & Connection",
+      subtitle: "สื่อสารอารมณ์และเชื่อมโยงกับผู้ฟัง • Audience Connection",
+      tag: "Performance • โชว์บนเวที",
       span: "col-span-1 aspect-square",
     },
     {
       id: 4,
-      image: musicPic4,
-      title: "Band Chemistry & Teamwork",
-      subtitle: "Tuesday Band Members on Stage",
-      tag: "Team Synergy",
+      image: musicPic1,
+      title: "พลังทีมเวิร์กบนเวที • Team Synergy & Chemistry",
+      subtitle: "ความสอดประสานของสมาชิกวง Tuesday • Band Teamwork",
+      tag: "Synergy • พลังทีมเวิร์ก",
       span: "col-span-1 aspect-square",
     },
     {
       id: 5,
-      image: musicPic5,
-      title: "Energy & Stage Highlights",
-      subtitle: "Capturing the Crowd Energy",
-      tag: "Vocalist",
+      image: musicPic3,
+      title: "พลังงานและบรรยากาศคอนเสิร์ต • Crowd Energy & Highlights",
+      subtitle: "สร้างความสนุกและเอนเกจกับผู้ชม • Stage Energy & Engagement",
+      tag: "Vocalist • นักร้องนำ",
       span: "col-span-1 aspect-square",
     },
     {
       id: 6,
       image: musicPic6,
-      title: "Festival Moments",
-      subtitle: "Music as an Art of Expression",
-      tag: "Experience",
+      title: "ประสบการณ์และความทรงจำดนตรี • Festival Moments",
+      subtitle: "ดนตรีคือศิลปะแห่งการสื่อสาร • Music as an Art of Expression",
+      tag: "Experience • ประสบการณ์",
       span: "col-span-1 md:col-span-2 aspect-video md:aspect-[21/9]",
     },
   ],
