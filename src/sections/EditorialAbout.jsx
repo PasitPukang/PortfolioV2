@@ -2,13 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGraduationCap,
-  faCodeBranch,
-  faCertificate,
-  faExternalLinkAlt,
-  faCheckCircle,
+  faLightbulb,
 } from '@fortawesome/free-solid-svg-icons';
 import { data as aboutData } from '../contents/about';
-import { data as headerData } from '../contents/header';
 
 export default function EditorialAbout() {
   return (
@@ -25,13 +21,13 @@ export default function EditorialAbout() {
           </h2>
         </div>
         <p className="text-xs sm:text-sm text-[#1C1D20]/70 max-w-md font-normal">
-          เส้นทางการเรียนรู้ ทักษะทางเทคนิค และเอกสารรับรองความสามารถ (Certificates)
+          เส้นทางการเรียนรู้ ประวัติการศึกษา และทักษะทางเทคนิค (Education & Technical Competencies)
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10">
 
-        {/* Left Column: Education & Story (5 cols) */}
+        {/* Left Column: Education & Background Story (5 cols) */}
         <div className="lg:col-span-5 flex flex-col gap-6">
 
           {/* Education Card */}
@@ -61,41 +57,21 @@ export default function EditorialAbout() {
             </div>
           </div>
 
-
-
-          {/* Verified Certificates */}
+          {/* Engineering Mindset & Story Card */}
           <div className="p-6 sm:p-7 rounded-3xl bg-white border-[2px] border-[#1C1D20] shadow-md space-y-4">
             <div className="flex items-center justify-between border-b border-[#1C1D20]/15 pb-3">
               <div className="flex items-center gap-2">
-                <FontAwesomeIcon icon={faCertificate} className="text-amber-500 text-sm" />
+                <FontAwesomeIcon icon={faLightbulb} className="text-amber-500 text-sm" />
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#1C1D20]">
-                  Certificates
+                  My Focus & Passion
                 </span>
               </div>
-              <span className="text-[10px] font-mono text-[#1C1D20]/60">3 Verified</span>
+              <span className="text-[10px] font-mono text-emerald-700 font-bold uppercase">Continuous Learner</span>
             </div>
 
-            <div className="space-y-2.5">
-              {headerData.certificates.map((cert, cIdx) => (
-                <a
-                  key={cIdx}
-                  href={cert.file}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-between p-3 rounded-xl bg-[#F4F3EF] hover:bg-[#1C1D20] text-[#1C1D20] hover:text-white border border-[#1C1D20]/15 transition-all group cursor-pointer"
-                >
-                  <div>
-                    <div className="text-xs font-bold leading-tight group-hover:text-emerald-300 transition">
-                      {cert.name}
-                    </div>
-                    <div className="text-[10px] opacity-70">
-                      {cert.issuer}
-                    </div>
-                  </div>
-                  <FontAwesomeIcon icon={faExternalLinkAlt} className="text-[10px] opacity-60 group-hover:opacity-100" />
-                </a>
-              ))}
-            </div>
+            <p className="text-xs sm:text-sm text-[#1C1D20]/80 leading-relaxed">
+              {aboutData.description}
+            </p>
           </div>
 
         </div>
